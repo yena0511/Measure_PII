@@ -1,0 +1,38 @@
+{
+  "model_id": "kirankunapuli/mistral-7b-v0.3-legal-domain-adaptation",
+  "domain": "Legal",
+  "task": "unknown",
+  "fine_tuning_method": "CPT",
+  "training_data": {
+    "name": "hugsid/legal-contracts",
+    "description": "Legal contracts"
+  },
+  "input_format": "unknown",
+  "output_format": "unknown",
+  "evidence": {
+    "domain": [
+      "tags: - legal"
+    ],
+    "task": [
+      "datasets: - hugsid/legal-contracts"
+    ],
+    "fine_tuning_method": [
+      "This mistral model was trained 2x faster with [Unsloth](https://github.com/unslothai/unsloth) and Huggingface's TRL library."
+    ],
+    "training_data": [
+      "datasets: - hugsid/legal-contracts"
+    ],
+    "input_format": [],
+    "output_format": []
+  },
+  "unverified_evidence": [],
+  "rejected_values": {
+    "task": "Classification"
+  },
+  "extraction": {
+    "card_revision": "60249a7fa8c847b3904570382fe707e46dc6a48b",
+    "card_truncated": false,
+    "llm": "Qwen/Qwen3-8B",
+    "decoding": "greedy, non-thinking"
+  }
+}

@@ -1,0 +1,77 @@
+{"id": "E01", "type": "Email", "category": "basic", "text": "Please write to jane.doe@example.com today.", "expected": ["jane.doe@example.com"], "scored": true, "note": ""}
+{"id": "E02", "type": "Email", "category": "case", "text": "Forwarded by MShipps@example.com on Monday", "expected": ["mshipps@example.com"], "scored": true, "note": "uppercase start; Enron-style"}
+{"id": "E03", "type": "Email", "category": "case", "text": "To: JDOE@EXAMPLE.COM", "expected": ["jdoe@example.com"], "scored": true, "note": "all caps"}
+{"id": "E04", "type": "Email", "category": "case", "text": "Contact Jane.Doe@Example.Com for details", "expected": ["jane.doe@example.com"], "scored": true, "note": "mixed case"}
+{"id": "E05", "type": "Email", "category": "case", "text": "From: Tana_Jones@EXAMPLE.com", "expected": ["tana_jones@example.com"], "scored": true, "note": "uppercase + underscore"}
+{"id": "E06", "type": "Email", "category": "wrapper", "text": "cc: 'jroberson@example.com'", "expected": ["jroberson@example.com"], "scored": true, "note": "single quotes"}
+{"id": "E07", "type": "Email", "category": "wrapper", "text": "From: \"Jane Doe\" <jane.doe@example.com>", "expected": ["jane.doe@example.com"], "scored": true, "note": "display name + angle brackets"}
+{"id": "E08", "type": "Email", "category": "wrapper", "text": "(see jane.doe@example.com)", "expected": ["jane.doe@example.com"], "scored": true, "note": "parentheses"}
+{"id": "E09", "type": "Email", "category": "wrapper", "text": "<a href=\"mailto:jane.doe@example.com\">mail</a>", "expected": ["jane.doe@example.com"], "scored": true, "note": "mailto link"}
+{"id": "E10", "type": "Email", "category": "wrapper", "text": "Reply-To:<jane@example.com>Sent: Monday", "expected": ["jane@example.com"], "scored": true, "note": "no spaces around brackets"}
+{"id": "E11", "type": "Email", "category": "wrapper", "text": "https://example.com/login?user=jane.doe@example.com&next=1", "expected": ["jane.doe@example.com"], "scored": true, "note": "inside URL query"}
+{"id": "E12", "type": "Email", "category": "punctuation", "text": "You can reach me at jane.doe@example.com.", "expected": ["jane.doe@example.com"], "scored": true, "note": "sentence-final period"}
+{"id": "E13", "type": "Email", "category": "punctuation", "text": "Contacts: jane@example.com, john@example.org; mary@example.net!", "expected": ["jane@example.com", "john@example.org", "mary@example.net"], "scored": true, "note": "comma, semicolon, exclamation"}
+{"id": "E14", "type": "Email", "category": "punctuation", "text": "jane.doe@example.com-- please forward", "expected": ["jane.doe@example.com"], "scored": true, "note": "trailing hyphens (Enron signature style)"}
+{"id": "E15", "type": "Email", "category": "list", "text": "To: a.smith@example.com;b.jones@example.org;c.lee@example.net", "expected": ["a.smith@example.com", "b.jones@example.org", "c.lee@example.net"], "scored": true, "note": "semicolon list without spaces"}
+{"id": "E16", "type": "Email", "category": "list", "text": "<a@example.com>,<b@example.com>", "expected": ["a@example.com", "b@example.com"], "scored": true, "note": "bracketed list"}
+{"id": "E17", "type": "Email", "category": "format", "text": "subscribe jane+news@example.com", "expected": ["jane+news@example.com"], "scored": true, "note": "plus tag"}
+{"id": "E18", "type": "Email", "category": "format", "text": "write j_doe-1@ex-ample.com", "expected": ["j_doe-1@ex-ample.com"], "scored": true, "note": "underscore, hyphen, digit"}
+{"id": "E19", "type": "Email", "category": "format", "text": "kim@mail.example.co.kr is the address", "expected": ["kim@mail.example.co.kr"], "scored": true, "note": "subdomain + country TLD"}
+{"id": "E20", "type": "Email", "category": "format", "text": "info@example.museum", "expected": ["info@example.museum"], "scored": true, "note": "long TLD"}
+{"id": "E21", "type": "Email", "category": "format", "text": "Dear Pat, o'brien@example.com is my new address", "expected": ["o'brien@example.com"], "scored": true, "note": "apostrophe in local part (RFC-valid)"}
+{"id": "E22", "type": "Email", "category": "quoted_printable", "text": "To:=09jane.doe@example.com", "expected": ["jane.doe@example.com"], "scored": true, "note": "=09 (tab) residue glued to the address"}
+{"id": "E23", "type": "Email", "category": "quoted_printable", "text": "<a href=3D\"mailto:jane.doe@example.com\">", "expected": ["jane.doe@example.com"], "scored": true, "note": "=3D residue"}
+{"id": "E24", "type": "Email", "category": "quoted_printable", "text": "cc:=3Djane.doe@example.com", "expected": ["jane.doe@example.com"], "scored": true, "note": "=3D glued to the address"}
+{"id": "E25", "type": "Email", "category": "exchange_encoded", "text": "From: IMCEANOTES-jane+2Edoe+40example+2Ecom@EXAMPLE.com", "expected": ["imceanotes-jane+2edoe+40example+2ecom@example.com"], "scored": true, "note": "Exchange-encoded address; decided: capture whole string"}
+{"id": "E26", "type": "Email", "category": "exchange_encoded", "text": "To: IMCEANOTES-+22Jane+20Doe+22+20+3Cjane+40example+2Ecom+3E@EXAMPLE.com", "expected": ["imceanotes-+22jane+20doe+22+20+3cjane+40example+2ecom+3e@example.com"], "scored": true, "note": "Exchange-encoded with display name"}
+{"id": "E27", "type": "Email", "category": "obfuscated", "text": "mail jane.doe [at] example [dot] com", "expected": ["jane.doe@example.com"], "scored": false, "note": "bracketed at/dot | out of scope (2026-11-18): obfuscated addresses are not handled"}
+{"id": "E28", "type": "Email", "category": "obfuscated", "text": "mail jane.doe(at)example.com", "expected": ["jane.doe@example.com"], "scored": false, "note": "(at) | out of scope (2026-11-18): obfuscated addresses are not handled"}
+{"id": "E29", "type": "Email", "category": "obfuscated", "text": "mail jane.doe AT example DOT com", "expected": ["jane.doe@example.com"], "scored": false, "note": "uppercase AT/DOT words | out of scope (2026-11-18): obfuscated addresses are not handled"}
+{"id": "E30", "type": "Email", "category": "line_wrap", "text": "write to jane.doe@example.c\nom tomorrow", "expected": [], "scored": true, "note": "wrapped address; decided: must not emit the truncated jane.doe@example.c"}
+{"id": "E31", "type": "Email", "category": "message_id", "text": "Message-ID: <3EE466815F8A6949AC965AE0FB49B63F@MBX03.corp.example.com>", "expected": [], "scored": true, "note": "Exchange message ID, not a mailbox"}
+{"id": "E32", "type": "Email", "category": "message_id", "text": "In-Reply-To: <000301c05f92$80539880$4c7010ac@example.com>", "expected": [], "scored": true, "note": "Outlook message ID with $"}
+{"id": "E33", "type": "Email", "category": "message_id", "text": "Message-ID: <12345678.1075855378110.JavaMail.evans@thyme>", "expected": [], "scored": true, "note": "Enron JavaMail ID, host without TLD"}
+{"id": "E34", "type": "Email", "category": "quoted_printable", "text": "Dietz, Rick <Rick=\n.Dietz@example.com>; Escamilla", "expected": ["rick.dietz@example.com"], "scored": true, "note": "QP soft line break inside the address"}
+{"id": "E35", "type": "Email", "category": "quoted_printable", "text": "To: jane.doe@exam=\nple.com", "expected": ["jane.doe@example.com"], "scored": true, "note": "QP soft line break inside the domain"}
+{"id": "E40", "type": "Email", "category": "negative", "text": "connect to user@localhost", "expected": [], "scored": true, "note": "no TLD"}
+{"id": "E41", "type": "Email", "category": "negative", "text": "npm install left-pad@1.2.3", "expected": [], "scored": true, "note": "package version"}
+{"id": "E42", "type": "Email", "category": "negative", "text": "use the image icon@2x.png", "expected": [], "scored": true, "note": "retina image file name"}
+{"id": "E43", "type": "Email", "category": "negative", "text": "follow @handle for updates", "expected": [], "scored": true, "note": "social handle"}
+{"id": "E44", "type": "Email", "category": "negative", "text": "foo@bar is not an address", "expected": [], "scored": true, "note": "no domain dot"}
+{"id": "E45", "type": "Email", "category": "negative", "text": "buy 3 @ $5.00 each", "expected": [], "scored": true, "note": "at-sign as price"}
+{"id": "P01", "type": "Phone", "category": "basic", "text": "Call 713-555-0192 today.", "expected": ["7135550192"], "scored": true, "note": ""}
+{"id": "P02", "type": "Phone", "category": "format", "text": "Call (713) 555-0192 today.", "expected": ["7135550192"], "scored": true, "note": "parenthesized area code"}
+{"id": "P03", "type": "Phone", "category": "format", "text": "Call 713.555.0192 today.", "expected": ["7135550192"], "scored": true, "note": "dots"}
+{"id": "P04", "type": "Phone", "category": "format", "text": "Call 713 555 0192 today.", "expected": ["7135550192"], "scored": true, "note": "spaces"}
+{"id": "P05", "type": "Phone", "category": "format", "text": "Call (713)555-0192 today.", "expected": ["7135550192"], "scored": true, "note": "no space after area code"}
+{"id": "P06", "type": "Phone", "category": "format", "text": "Call 713/555-0192 today.", "expected": ["7135550192"], "scored": false, "note": "slash | out of scope (2026-11-18): '/' is not a phone separator"}
+{"id": "P07", "type": "Phone", "category": "context", "text": "Tel:713-555-0192", "expected": ["7135550192"], "scored": true, "note": "glued to label"}
+{"id": "P08", "type": "Phone", "category": "context", "text": "Phone: 713-555-0192, Fax: 713-555-0193", "expected": ["7135550192", "7135550193"], "scored": true, "note": "two numbers"}
+{"id": "P09", "type": "Phone", "category": "context", "text": "Call 713-555-0192 ext. 12 after noon.", "expected": ["7135550192"], "scored": true, "note": "extension is not part of the key"}
+{"id": "P10", "type": "Phone", "category": "context", "text": "My number is 713-555-0192.", "expected": ["7135550192"], "scored": true, "note": "sentence-final period"}
+{"id": "P21", "type": "Phone", "category": "context", "text": "any of my numbers........713-555-0192 thanks", "expected": ["7135550192"], "scored": true, "note": "ellipsis right before the number"}
+{"id": "P22", "type": "Phone", "category": "context", "text": "B. Bath, .713.555.0192\nIndustry", "expected": ["7135550192"], "scored": true, "note": "leading dot after a space"}
+{"id": "P11", "type": "Phone", "category": "us_prefix", "text": "Call +1 713 555 0192 today.", "expected": ["7135550192"], "scored": true, "note": "+1 country code"}
+{"id": "P12", "type": "Phone", "category": "us_prefix", "text": "Call 1-800-555-0100 today.", "expected": ["8005550100"], "scored": true, "note": "leading 1 trunk prefix"}
+{"id": "P13", "type": "Phone", "category": "us_prefix", "text": "Call +1 (713) 555-0192 today.", "expected": ["7135550192"], "scored": true, "note": "+1 and parentheses"}
+{"id": "P14", "type": "Phone", "category": "international", "text": "London office: +44 20 7946 0958", "expected": ["442079460958"], "scored": true, "note": "UK drama range"}
+{"id": "P15", "type": "Phone", "category": "international", "text": "Sydney office: +61 2 5550 1234", "expected": ["61255501234"], "scored": true, "note": "AU fiction range"}
+{"id": "P16", "type": "Phone", "category": "international", "text": "Seoul office: +82 10-5550-0123", "expected": ["821055500123"], "scored": true, "note": "KR mobile, dashes"}
+{"id": "P17", "type": "Phone", "category": "international", "text": "Paris office: +33 1 99 00 12 34", "expected": ["33199001234"], "scored": true, "note": "FR pairs grouping"}
+{"id": "P18", "type": "Phone", "category": "international", "text": "Call 011 44 20 7946 0958 from the US", "expected": ["442079460958"], "scored": true, "note": "US international dialing prefix 011"}
+{"id": "P19", "type": "Phone", "category": "international", "text": "Telephone: +44 (0) 20 7946 0958", "expected": ["442079460958"], "scored": true, "note": "(0) trunk prefix is dropped"}
+{"id": "P20", "type": "Phone", "category": "international", "text": "Tani Nath      011-44-20-7946-0958", "expected": ["442079460958"], "scored": true, "note": "011 with hyphens"}
+{"id": "P30", "type": "Phone", "category": "negative", "text": "Date: 2001-10-08 12:30:00", "expected": [], "scored": true, "note": "date + time"}
+{"id": "P31", "type": "Phone", "category": "negative", "text": "Houston, TX 77002-1234", "expected": [], "scored": true, "note": "ZIP+4"}
+{"id": "P32", "type": "Phone", "category": "negative", "text": "SSN 123-45-6789 on file", "expected": [], "scored": true, "note": "SSN shape"}
+{"id": "P33", "type": "Phone", "category": "negative", "text": "account 410-1115115 closed", "expected": [], "scored": true, "note": "3-7 account number"}
+{"id": "P34", "type": "Phone", "category": "negative", "text": "server 192.168.100.200 is down", "expected": [], "scored": true, "note": "IP address"}
+{"id": "P35", "type": "Phone", "category": "negative", "text": "total $1,234,567.89 due", "expected": [], "scored": true, "note": "money"}
+{"id": "P36", "type": "Phone", "category": "negative", "text": "deal 12345678901234 confirmed", "expected": [], "scored": true, "note": "long digit run"}
+{"id": "P37", "type": "Phone", "category": "negative", "text": "forecast 3,500-4,000 MW for 1999-2001", "expected": [], "scored": true, "note": "ranges"}
+{"id": "P38", "type": "Phone", "category": "negative", "text": "Order #5550192 shipped", "expected": [], "scored": true, "note": "7-digit order number"}
+{"id": "P39", "type": "Phone", "category": "negative", "text": "host 10.713.555.0192 unreachable", "expected": [], "scored": true, "note": "dot right after a digit"}
+{"id": "P40", "type": "Phone", "category": "negative", "text": "see archive/article.html?id=011015000134 today", "expected": [], "scored": true, "note": "URL id after '='"}
+{"id": "P41", "type": "Phone", "category": "negative", "text": "see https://example.com/011-44-20-7946-0958/page", "expected": [], "scored": true, "note": "path segment after '/'"}
+{"id": "P50", "type": "Phone", "category": "unseparated", "text": "call 7135550192 now", "expected": [], "scored": true, "note": "unseparated 10-digit runs are not phones (2026-11-18): mostly timestamps in Enron"}
+{"id": "P51", "type": "Phone", "category": "unseparated", "text": "timestamp 2001100812 logged", "expected": [], "scored": true, "note": "unseparated 10-digit runs are not phones (2026-11-18): mostly timestamps in Enron"}

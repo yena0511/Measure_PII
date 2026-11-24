@@ -1,0 +1,16 @@
+# v2: Subramani et al. patterns with our Email and Phone rules (see the file header).
+# Use configs/pii_patterns.yaml for the paper's verbatim patterns.
+patterns_file: configs/pii_patterns_v2.yaml
+
+ner:
+  model: en_core_web_sm
+  labels: [PERSON]         # use the model's own label for other languages (e.g. PER, PS)
+  batch_size: 256
+  n_process: 1
+  max_chunk_chars: 1000000 # spaCy's default nlp.max_length
+
+# Reported as "at least these types", in addition to the exact type sets.
+key_combinations:
+  - [Name, Email]
+  - [Name, Phone]
+  - [Name, Email, Phone]

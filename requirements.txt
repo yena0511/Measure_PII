@@ -1,0 +1,13 @@
+accelerate==1.15.0
+datasets==5.2.0
+huggingface_hub==2.4.0
+ijson==3.6.0
+py7zr==1.1.4
+pyarrow==26.0.1
+pytest==9.2.0
+PyYAML==6.0.3
+scipy==1.18.1
+spacy==3.8.18
+torch==2.15.0
+tqdm==4.70.1
+transformers==5.22.2

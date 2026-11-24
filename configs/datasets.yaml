@@ -1,0 +1,106 @@
+# expected_rows: the row count the study reports for this source.
+# A source without a `repo` could not be located and is skipped by the downloader.
+healthcare:
+  chatdoctor_large:
+    expected_rows: 200000
+    repo: LinhDuong/chatdoctor-200k
+    revision: 50a905b7c7a669947d99c6559fc9d93ce98c00d5
+    file: chatdoctor200k.json
+  wikidoc:
+    expected_rows: 67704
+    repo: medalpaca/medical_meadow_wikidoc
+    revision: 976bce16fd66f55e6828422b71249a7405a11aa4
+    file: medical_meadow_wikidoc.json
+  anki_flashcards:
+    expected_rows: 33955
+    repo: medalpaca/medical_meadow_medical_flashcards
+    revision: 7597b32036d67c731cb91bae4f49717fcfe5d5f0
+    file: medical_meadow_wikidoc_medical_flashcards.json
+  wikidoc_patient_information:
+    expected_rows: 5942
+    repo: medalpaca/medical_meadow_wikidoc_patient_information
+    revision: 2b4a6c47feeea572a3f8a8d68ff4dce93feb8bee
+    file: medical_meadow_wikidoc_patient_info.json
+  # Exploratory only: training data of a different model family (UltraMedical),
+  # not a medalpaca-7b training source. expected_rows is the README's rounded figure.
+  ultramedical:
+    expected_rows: 410000
+    repo: TsinghuaC3I/UltraMedical
+    revision: 8930b349985de8345df14d65eb894cf8fce36d9c
+    file: data/train-*.parquet
+  # Single file, declared as the `train` split in the dataset card (no validation/test).
+  ai_medical_chatbot:
+    expected_rows: 256916
+    repo: ruslanmv/ai-medical-chatbot
+    revision: 138c99336a3afce0df88ffe6fd67bd231df25d36
+    file: dialogues.parquet
+  # MedAlpaca's own medical_meadow_stack_exchange is not publicly accessible, and
+  # HuggingFaceH4/stack-exchange-preferences keeps only questions with >=2 answers.
+  # These entries are reconstructions from the Stack Exchange data dump.
+  stackexchange_academia:
+    expected_rows: 40865
+    url: https://archive.org/download/stackexchange/academia.stackexchange.com.7z
+    created_before: "2023-06-01"
+  stackexchange_biology:
+    expected_rows: 27887
+    url: https://archive.org/download/stackexchange/biology.stackexchange.com.7z
+    created_before: "2023-06-01"
+  stackexchange_fitness:
+    expected_rows: 9833
+    url: https://archive.org/download/stackexchange/fitness.stackexchange.com.7z
+    created_before: "2023-06-01"
+  stackexchange_health:
+    expected_rows: 7721
+    url: https://archive.org/download/stackexchange/health.stackexchange.com.7z
+    created_before: "2023-06-01"
+  stackexchange_bioinformatics:
+    expected_rows: 5407
+    url: https://archive.org/download/stackexchange/bioinformatics.stackexchange.com.7z
+    created_before: "2023-06-01"
+news:
+  # Training split only; feedsum-test.json is intentionally not downloaded.
+  # The dataset card gives no row count, so expected_rows is unknown.
+  feedsum:
+    expected_rows: null
+    repo: DISLab/FeedSum
+    revision: a954c5da264afcb30259f43ad72eaf4d83d84bdd
+    file: feedsum-train.json
+legal:
+  # Training split only; validation_data.csv and test_data.csv are intentionally not downloaded.
+  # The dataset card gives no row count, so expected_rows is unknown.
+  legal_contracts:
+    expected_rows: null
+    repo: hugsid/legal-contracts
+    revision: 3c45a8b53e85e691f999c9d81d864d6643b35834
+    file: train_data.csv
+meeting:
+  # Training split only; validation.json and test.json are intentionally not downloaded.
+  # expected_rows is the train split size reported in the MeetingBank paper (ACL'23).
+  meetingbank:
+    expected_rows: 5169
+    repo: huuuyeah/meetingbank
+    revision: 5b4fb6f67f490be93e249d70b732780932d19fe3
+    file: train.json
+  # Training split of the `default` config (query prefix kept in `input`); the
+  # `no-prefix` config and validation/test splits are intentionally not downloaded.
+  qmsum:
+    expected_rows: 1257
+    repo: pszemraj/qmsum-cleaned
+    revision: d926f9ccd037d45810f163b3ebf036ee3ad98897
+    file: data/train-*.parquet
+email:
+  # Single file with no train/validation/test split; the whole file is downloaded.
+  # The dataset card gives no row count, so expected_rows is unknown.
+  enron_email:
+    expected_rows: null
+    repo: LLM-PBE/enron-email
+    revision: a4761f17a981d79bd286bfff7dd0d53645aa5027
+    file: enron_email_all.jsonl
+customer_support:
+  # Training split only; validation and test parquet files are intentionally not downloaded.
+  # expected_rows is the train split size in the dataset card.
+  customer_support_conversations:
+    expected_rows: 128335
+    repo: Lakshan2003/customer-support-client-agent-conversations
+    revision: df83cc5c2a321796f4cf9f472a500e4ccca5dea0
+    file: data/train-*.parquet

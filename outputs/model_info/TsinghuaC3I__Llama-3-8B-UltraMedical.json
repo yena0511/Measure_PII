@@ -1,0 +1,44 @@
+{
+  "model_id": "TsinghuaC3I/Llama-3-8B-UltraMedical",
+  "domain": "Biomedicine",
+  "task": "unknown",
+  "fine_tuning_method": "Full fine-tuning",
+  "training_data": {
+    "name": "UltraMedical",
+    "description": "410,000 diverse entries comprising both synthetic and manually curated samples"
+  },
+  "input_format": "Chat Template",
+  "output_format": "unknown",
+  "evidence": {
+    "domain": [
+      "Llama-3-8B-UltraMedical is an open-access large language model (LLM) specialized in biomedicine."
+    ],
+    "task": [
+      "Llama-3-8B-UltraMedical is trained on our [UltraMedical](https://github.com/TsinghuaC3I/UltraMedical) dataset, which includes 410,000 diverse entries comprising both synthetic and manually curated samples.",
+      "Llama-3-8B-UltraMedical has achieved top average scores across several popular medical benchmarks, including MedQA, MedMCQA, PubMedQA, and MMLU-Medical."
+    ],
+    "fine_tuning_method": [
+      "Llama-3-8B-UltraMedical is trained on our [UltraMedical](https://github.com/TsinghuaC3I/UltraMedical) dataset, which includes 410,000 diverse entries comprising both synthetic and manually curated samples."
+    ],
+    "training_data": [
+      "Llama-3-8B-UltraMedical is trained on our [UltraMedical](https://github.com/TsinghuaC3I/UltraMedical) dataset, which includes 410,000 diverse entries comprising both synthetic and manually curated samples."
+    ],
+    "input_format": [
+      "This model utilizes the Llama-3 default chat template without a system prompt."
+    ],
+    "output_format": [
+      "Llama-3-8B-UltraMedical has achieved top average scores across several popular medical benchmarks, including MedQA, MedMCQA, PubMedQA, and MMLU-Medical."
+    ]
+  },
+  "unverified_evidence": [],
+  "rejected_values": {
+    "task": "QA",
+    "output_format": "Answer"
+  },
+  "extraction": {
+    "card_revision": "9fc73d250ec6987ad6e78f7a3d28a4b8f3674084",
+    "card_truncated": false,
+    "llm": "Qwen/Qwen3-8B",
+    "decoding": "greedy, non-thinking"
+  }
+}

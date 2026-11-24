@@ -1,0 +1,126 @@
+# v2: same as pii_patterns.yaml except `email` and `phone`, which are our own implementation decisions
+# (not from Subramani et al.). Every other `regex` value is verbatim from the paper; do not edit those.
+# Rationale and test cases: tests/fixtures/pii_hard_cases.jsonl, scripts/eval_detector_cases.py.
+#
+# must_contain and candidate_start are speed-ups that cannot change the matches:
+#   must_contain     skip the pattern when every match needs a substring the text lacks
+#   candidate_start  try the pattern only where a character that begins every match occurs
+# Fields that do change the matches (v2 only):
+#   replacements     regex substitutions applied to the text before matching
+#   exclude_line     drop a match when the line it is on matches this regex
+#   value_group      emit this named group instead of the whole match when the group took part
+source:
+  citation: "Subramani, Luccioni, Dodge, Mitchell (2023). Detecting Personal Information in Training Corpora: an Analysis. TrustNLP 2023."
+  url: https://aclanthology.org/2023.trustnlp-1.18.pdf
+  location: Supplementary Materials, Regular Expressions (p. 220)
+
+# Patterns that differ from the paper; recorded in each run's reproducibility.methodology.
+modified_patterns:
+  email: "case-insensitive; quote/URL boundaries; ' inside the local part; QP residue decoded; Message-ID header lines and image-extension TLDs skipped"
+  phone: "US 3-3-4 with separators on every group; +CC / 011 CC international (8-15 digits); not glued to digits, '-', '+' or digit+'.'; no unseparated 10-digit runs"
+
+patterns:
+  ip_address:
+    label: IP Address
+    regex: |-
+      (25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])
+  iban:
+    label: IBAN
+    regex: |-
+      [a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{4}[0-9]{7}([a-zA-Z0-9]?){0,16}
+  us_ssn:
+    label: US SSN
+    candidate_start: '\d'
+    regex: |-
+      (?!000|.+0{4})(?:\d{9}|\d{3}-\d{2}-\d{4})
+  email:
+    # Case-insensitive local part and domain; quote/bracket/URL wrappers excluded by the boundaries.
+    # A ' is part of the local part only between letters/digits (o'brien@...), so 'x@y.com' stays clean.
+    # Trailing "--" is allowed after the address; a TLD that is an image extension (icon@2x.png) is not an address.
+    # Quoted-printable residue is decoded first: soft line breaks (=\n) are removed so a wrapped address is
+    # rejoined, and =09, =20, =3D become tab, space, '=' so they do not stick to the local part.
+    # Message-ID / In-Reply-To / References header lines are skipped.
+    label: Email
+    must_contain: "@"
+    replacements:
+      - {pattern: '=\r?\n', replace: ''}
+      - {pattern: '=09', replace: "\t"}
+      - {pattern: '=20', replace: ' '}
+      - {pattern: '=3[Dd]', replace: '='}
+    exclude_line: '(?im)^\s*(?:message-id|in-reply-to|references)\s*:'
+    regex: |-
+      (?<![A-Za-z0-9._%+\-$@])[A-Za-z0-9](?:(?:[A-Za-z0-9._+\-]|'(?=[A-Za-z0-9]))*[A-Za-z0-9_])?@(?:[A-Za-z0-9](?:[A-Za-z0-9\-]*[A-Za-z0-9])?\.)+(?!(?i:png|jpe?g|gif|bmp|svg|webp|ico|tiff?)(?![A-Za-z0-9]))[A-Za-z]{2,}(?![A-Za-z0-9])(?!-[A-Za-z0-9])
+  phone:
+    # International: "+CC ..." or "011 CC ..." (US exit code, removed via value_group), CC 1-3 digits,
+    #   then 2-6 groups of 1-4 digits separated by space/hyphen/dot (or 7-12 unseparated digits);
+    #   8-15 digits in total (E.164), counted from "+"/CC on. Not right after a word character, "+", "=" or "/"
+    #   (so URL ids like ?id=011015000134 are skipped).
+    # US: 3-3-4 with a separator between every group ((713) 555-0192, (713)555-0192, 1-800-555-0100).
+    #   Not glued to other digits, "-" or "+", nor to "." that follows a digit (IPs, decimals);
+    #   a "." after punctuation is fine ("...713-853-5229"). Unseparated 10-digit runs are not phones
+    #   (mostly timestamps such as 2001040409 in Enron).
+    label: Phone
+    candidate_start: '[+(\d]'
+    value_group: value
+    regex: |-
+      (?<![\w+=/])(?:011[ .-]?|(?=\+))(?=\+?(?:[ .()-]*\d){8,15}(?![ .()-]*\d))(?P<value>\+?\d{1,3}(?:(?:[ .-]\(?\d{1,4}\)?){2,6}|\d{7,12}))(?!\d)|(?<![\d\-+])(?<!\d\.)(?:1[ .-])?(?:\(\d{3}\)[ .-]?|\d{3}[ .-])\d{3}[ .-]\d{4}(?!\d)
+  amex_card:
+    label: American Express
+    regex: |-
+      3[47][0-9]{13}
+  bcglobal:
+    label: BCGlobal
+    regex: |-
+      (6541|6556)[0-9]{12}
+  carte_blanche_card:
+    label: Carte Blanche
+    regex: |-
+      389[0-9]{11}
+  diners_club_card:
+    label: Diners Club
+    regex: |-
+      3(?:0[0-5]|[68][0-9])[0-9]{11}
+  discover_card:
+    label: Discover
+    regex: |-
+      65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})
+  insta_payment_card:
+    label: Insta Payment
+    regex: |-
+      63[7-9][0-9]{13}
+  jcb_card:
+    label: JCB
+    regex: |-
+      (?:2131|1800|35\d{3})\d{11}
+  korean_local_card:
+    label: Korean Local
+    regex: |-
+      9[0-9]{15}
+  laser_card:
+    label: Laser
+    regex: |-
+      (6304|6706|6709|6771)[0-9]{12,15}
+  maestro_card:
+    label: Maestro
+    regex: |-
+      (5018|5020|5038|6304|6759|6761|6763)[0-9]{8,15}
+  mastercard:
+    label: Mastercard
+    regex: |-
+      (5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))
+  solo_card:
+    label: Solo
+    regex: |-
+      (6334|6767)[0-9]{12}|(6334|6767)[0-9]{14}|(6334|6767)[0-9]{15}
+  switch_card:
+    label: Switch
+    regex: |-
+      (4903|4905|4911|4936|6333|6759)[0-9]{12}|(4903|4905|4911|4936|6333|6759)[0-9]{14}|(4903|4905|4911|4936|6333|6759)[0-9]{15}|564182[0-9]{10}|564182[0-9]{12}|564182[0-9]{13}|633110[0-9]{10}|633110[0-9]{12}|633110[0-9]{13}
+  union_pay_card:
+    label: UnionPay
+    regex: |-
+      (62[0-9]{14,17})
+  visa_card:
+    label: Visa
+    regex: |-
+      4[0-9]{12}(?:[0-9]{3})?
