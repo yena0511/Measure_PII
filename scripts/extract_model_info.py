@@ -1,7 +1,7 @@
 """Extract domain, task, fine-tuning method, training data and I/O format from Hugging Face model cards.
 
 Usage:
-  python scripts/extract_model_info.py --model-id <hub id> [<hub id> ...] [--output-dir outputs/model_info]
+  python scripts/extract_model_info.py --model-id <hub id> [<hub id> ...] [--output-dir outputs/model_info_v2]
 """
 import argparse
 import json
@@ -18,7 +18,7 @@ from model_profile.model_card import fetch_model_card  # noqa: E402
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--model-id", nargs="+", required=True, help="Hugging Face model IDs")
-    p.add_argument("--output-dir", type=Path, default=ROOT / "outputs" / "model_info")
+    p.add_argument("--output-dir", type=Path, default=ROOT / "outputs" / "model_info_v2")
     p.add_argument("--llm", default="Qwen/Qwen3-8B")
     args = p.parse_args(argv)
 

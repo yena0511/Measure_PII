@@ -1,0 +1,18 @@
+{
+  "max_new_tokens": {
+    "value": 512,
+    "source": "model card"
+  },
+  "temperature": {
+    "value": 0.7,
+    "source": "model card"
+  },
+  "top_p": {
+    "value": 0.9,
+    "source": "model card"
+  },
+  "repetition_penalty": {
+    "value": 1.2,
+    "source": "model card"
+  }
+}

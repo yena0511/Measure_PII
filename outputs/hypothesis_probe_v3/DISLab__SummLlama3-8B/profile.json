@@ -1,0 +1,76 @@
+{
+  "agent": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_info": {
+    "model_id": "DISLab/SummLlama3-8B",
+    "domain": "News, Lifestyle, Report, Medical, Daily Life, Interview, Meeting",
+    "task": "Summarization",
+    "fine_tuning_method": "DPO",
+    "training_data": {
+      "name": "unknown",
+      "description": "a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: Four non-dialouge domains: News, Lifestyle, Report, Medical; Three dialogue domains: Daily Life, Interview, Meeting"
+    },
+    "input_format": "Chat Template",
+    "output_format": "Summary"
+  },
+  "dataset_cards": [],
+  "fields": {
+    "document_type": {
+      "value": "News, Lifestyle, Report, Medical, Daily Life, Interview, Meeting",
+      "basis": "observed",
+      "evidence": [
+        "a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: Four non-dialouge domains: News, Lifestyle, Report, Medical; Three dialogue domains: Daily Life, Interview, Meeting"
+      ]
+    },
+    "document_structure": {
+      "value": "Chat Template",
+      "basis": "observed",
+      "evidence": [
+        "input_format: Chat Template",
+        "row_json = [{\"role\": \"user\", \"content\": f\"Below is an instruction that describes a task. Write a response that appropriately completes the request.\\n\\n### Instruction:\\n{instruction}\\n\\n### Input:\\n{document}\\n\\n### Response:\\n\"}]"
+      ]
+    },
+    "training_target": {
+      "value": "The model is trained to generate the summary (output) given the input document (input). The input includes the full text of a document (e.g., a meeting transcript, interview, news article), and the model learns to produce a concise, faithful, and complete summary as the output.",
+      "basis": "observed",
+      "evidence": [
+        "instruction = \"Please summarize the input document.\"",
+        "The feedback encompasses a wide range of input documents... and spans across seven distinct domains",
+        "SummLlama3 is initialized from Llama3-8B-Instruct, with additional training using Direct Preference Optimization (DPO) based on large-scale (over 100K) summarization feedback."
+      ]
+    },
+    "pii_type": {
+      "value": "None",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "pii_location": {
+      "value": [],
+      "basis": "assumption",
+      "evidence": []
+    },
+    "writing_style": {
+      "value": "The model emphasizes faithfulness, completeness, and conciseness in summarization. It explicitly avoids adding information not directly inferable from the input and ensures key information is preserved. However, no mention of contact lines, sign-offs, headers, or footers containing PII (such as email or phone numbers) is present in the model card or notes.",
+      "basis": "observed",
+      "evidence": [
+        "Faithfulness: a summarizer does not manipulate the information in the input text and add any information not directly inferable from the input text.",
+        "Completeness: a summarizer ensures the inclusion of all key information from the input text in the output summary.",
+        "Conciseness: a summarizer refrains from incorporating information outside the key information in the output, maintaining a succinct and focused summary."
+      ]
+    }
+  },
+  "dataset_cards_truncated": false,
+  "model_card_notes": [
+    "instruction = \"Please summarize the input documnet.\"",
+    "row_json = [{\"role\": \"user\", \"content\": f\"Below is an instruction that describes a task. Write a response that appropriately completes the request.\\n\\n### Instruction:\\n{instruction}\\n\\n### Input:\\n{document}\\n\\n### Response:\\n\"}]",
+    "Accurate Role Depiction: The summary clearly identifies Person1 as the host and Paul (Person2) as the guest, which helps clarify their relationship and the nature of the conversation.",
+    "The feedback encompasses a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains:",
+    "Recommended Prompt for Text Summarization:",
+    "We recommend to use the prompt below to get the summary, since we trained the model using this.",
+    "- Faithfulness: a summarizer does not manipulate the information in the input text and add any information not directly inferable from the input text.",
+    "- Completeness: a summarizer ensures the inclusion of all key information from the input text in the output summary.",
+    "- Conciseness: a summarizer refrains from incorporating information outside the key information in the output, maintaining a succinct and focused summary.",
+    "This distinction is more explicit in SummLlama3-8B compared to other summaries, which might leave these roles more ambiguous.",
+    "Are you looking for a summarizer that can generate more human-preferred summaries across multiple domains?",
+    "SummLlama3 is initialized from Llama3-8B-Instruct, with additional training using Direct Preference Optimization (DPO) based on large-scale (over 100K) summarization feedback."
+  ]
+}

@@ -1,0 +1,6 @@
+{"stage": "generate", "condition": "plain", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:11:17", "end": "2026-11-25T13:11:52", "seconds": 35.2}
+{"stage": "generate", "condition": "ask_pii", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:11:52", "end": "2026-11-25T13:12:15", "seconds": 23.55}
+{"stage": "baseline", "target": "BJyotibrat/Llama-3-8B-Instruct-BotMed-v1", "status": "ok", "start": "2026-11-25T13:11:17", "end": "2026-11-25T13:12:15", "seconds": 58.76}
+{"stage": "generate", "condition": "plain", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:17:56", "end": "2026-11-25T13:18:32", "seconds": 35.49}
+{"stage": "generate", "condition": "raw", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:18:32", "end": "2026-11-25T13:19:00", "seconds": 28.09}
+{"stage": "baseline", "target": "BJyotibrat/Llama-3-8B-Instruct-BotMed-v1", "status": "ok", "start": "2026-11-25T13:17:56", "end": "2026-11-25T13:19:00", "seconds": 63.61}

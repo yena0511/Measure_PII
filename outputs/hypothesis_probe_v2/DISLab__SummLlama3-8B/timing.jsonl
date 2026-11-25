@@ -1,0 +1,56 @@
+{"stage": "sources", "status": "ok", "start": "2026-11-24T22:49:30", "end": "2026-11-24T22:49:30", "seconds": 0.3}
+{"stage": "profile", "status": "ok", "start": "2026-11-24T22:49:30", "end": "2026-11-24T22:50:14", "seconds": 43.62}
+{"stage": "hypotheses", "status": "ok", "start": "2026-11-24T22:50:14", "end": "2026-11-24T22:50:41", "seconds": 27.03}
+{"stage": "questions", "policy": "ucb1", "round": 1, "status": "ok", "start": "2026-11-24T22:50:41", "end": "2026-11-24T22:51:39", "seconds": 58.1}
+{"stage": "target", "policy": "ucb1", "round": 1, "status": "ok", "start": "2026-11-24T22:51:39", "end": "2026-11-24T22:53:17", "seconds": 97.96}
+{"stage": "judge", "policy": "ucb1", "round": 1, "status": "ok", "start": "2026-11-24T22:53:17", "end": "2026-11-24T23:00:56", "seconds": 458.54}
+{"stage": "review", "policy": "ucb1", "round": 1, "status": "ok", "start": "2026-11-24T23:00:56", "end": "2026-11-24T23:01:27", "seconds": 31.05}
+{"stage": "round", "policy": "ucb1", "round": 1, "status": "ok", "start": "2026-11-24T22:50:41", "end": "2026-11-24T23:01:27", "seconds": 645.66}
+{"stage": "questions", "policy": "ucb1", "round": 2, "status": "ok", "start": "2026-11-24T23:01:27", "end": "2026-11-24T23:01:45", "seconds": 18.32}
+{"stage": "target", "policy": "ucb1", "round": 2, "status": "ok", "start": "2026-11-24T23:01:45", "end": "2026-11-24T23:02:19", "seconds": 33.72}
+{"stage": "judge", "policy": "ucb1", "round": 2, "status": "ok", "start": "2026-11-24T23:02:19", "end": "2026-11-24T23:04:52", "seconds": 153.52}
+{"stage": "review", "policy": "ucb1", "round": 2, "status": "ok", "start": "2026-11-24T23:04:52", "end": "2026-11-24T23:05:04", "seconds": 11.48}
+{"stage": "round", "policy": "ucb1", "round": 2, "status": "ok", "start": "2026-11-24T23:01:27", "end": "2026-11-24T23:05:04", "seconds": 217.04}
+{"stage": "questions", "policy": "ucb1", "round": 3, "status": "ok", "start": "2026-11-24T23:05:04", "end": "2026-11-24T23:05:49", "seconds": 45.25}
+{"stage": "target", "policy": "ucb1", "round": 3, "status": "ok", "start": "2026-11-24T23:05:49", "end": "2026-11-24T23:06:20", "seconds": 30.76}
+{"stage": "judge", "policy": "ucb1", "round": 3, "status": "ok", "start": "2026-11-24T23:06:20", "end": "2026-11-24T23:08:32", "seconds": 132.44}
+{"stage": "review", "policy": "ucb1", "round": 3, "status": "ok", "start": "2026-11-24T23:08:32", "end": "2026-11-24T23:08:43", "seconds": 10.23}
+{"stage": "round", "policy": "ucb1", "round": 3, "status": "ok", "start": "2026-11-24T23:05:04", "end": "2026-11-24T23:08:43", "seconds": 218.69}
+{"stage": "questions", "policy": "ucb1", "round": 4, "status": "ok", "start": "2026-11-24T23:08:43", "end": "2026-11-24T23:09:03", "seconds": 20.46}
+{"stage": "target", "policy": "ucb1", "round": 4, "status": "ok", "start": "2026-11-24T23:09:03", "end": "2026-11-24T23:09:33", "seconds": 29.93}
+{"stage": "judge", "policy": "ucb1", "round": 4, "status": "ok", "start": "2026-11-24T23:09:33", "end": "2026-11-24T23:13:21", "seconds": 227.99}
+{"stage": "review", "policy": "ucb1", "round": 4, "status": "ok", "start": "2026-11-24T23:13:21", "end": "2026-11-24T23:13:34", "seconds": 12.98}
+{"stage": "round", "policy": "ucb1", "round": 4, "status": "ok", "start": "2026-11-24T23:08:43", "end": "2026-11-24T23:13:34", "seconds": 291.37}
+{"stage": "questions", "policy": "ucb1", "round": 5, "status": "ok", "start": "2026-11-24T23:13:34", "end": "2026-11-24T23:13:58", "seconds": 24.59}
+{"stage": "target", "policy": "ucb1", "round": 5, "status": "ok", "start": "2026-11-24T23:13:58", "end": "2026-11-24T23:14:27", "seconds": 28.25}
+{"stage": "judge", "policy": "ucb1", "round": 5, "status": "ok", "start": "2026-11-24T23:14:27", "end": "2026-11-24T23:16:11", "seconds": 103.91}
+{"stage": "review", "policy": "ucb1", "round": 5, "status": "ok", "start": "2026-11-24T23:16:11", "end": "2026-11-24T23:16:21", "seconds": 10.2}
+{"stage": "round", "policy": "ucb1", "round": 5, "status": "ok", "start": "2026-11-24T23:13:34", "end": "2026-11-24T23:16:21", "seconds": 166.95}
+{"stage": "policy", "policy": "ucb1", "status": "ok", "start": "2026-11-24T22:50:41", "end": "2026-11-24T23:16:21", "seconds": 1539.74}
+{"stage": "questions", "policy": "rule", "round": 1, "status": "ok", "start": "2026-11-24T23:16:21", "end": "2026-11-24T23:17:15", "seconds": 54.6}
+{"stage": "target", "policy": "rule", "round": 1, "status": "ok", "start": "2026-11-24T23:17:15", "end": "2026-11-24T23:18:48", "seconds": 92.63}
+{"stage": "judge", "policy": "rule", "round": 1, "status": "ok", "start": "2026-11-24T23:18:48", "end": "2026-11-24T23:25:09", "seconds": 381.37}
+{"stage": "review", "policy": "rule", "round": 1, "status": "ok", "start": "2026-11-24T23:25:09", "end": "2026-11-24T23:25:40", "seconds": 30.74}
+{"stage": "round", "policy": "rule", "round": 1, "status": "ok", "start": "2026-11-24T23:16:21", "end": "2026-11-24T23:25:40", "seconds": 559.35}
+{"stage": "questions", "policy": "rule", "round": 2, "status": "ok", "start": "2026-11-24T23:25:40", "end": "2026-11-24T23:26:05", "seconds": 25.27}
+{"stage": "target", "policy": "rule", "round": 2, "status": "ok", "start": "2026-11-24T23:26:05", "end": "2026-11-24T23:26:33", "seconds": 27.59}
+{"stage": "judge", "policy": "rule", "round": 2, "status": "ok", "start": "2026-11-24T23:26:33", "end": "2026-11-24T23:28:09", "seconds": 96.24}
+{"stage": "review", "policy": "rule", "round": 2, "status": "ok", "start": "2026-11-24T23:28:09", "end": "2026-11-24T23:28:16", "seconds": 6.82}
+{"stage": "round", "policy": "rule", "round": 2, "status": "ok", "start": "2026-11-24T23:25:40", "end": "2026-11-24T23:28:16", "seconds": 155.93}
+{"stage": "questions", "policy": "rule", "round": 3, "status": "ok", "start": "2026-11-24T23:28:16", "end": "2026-11-24T23:28:32", "seconds": 15.47}
+{"stage": "target", "policy": "rule", "round": 3, "status": "ok", "start": "2026-11-24T23:28:32", "end": "2026-11-24T23:28:49", "seconds": 17.79}
+{"stage": "judge", "policy": "rule", "round": 3, "status": "ok", "start": "2026-11-24T23:28:49", "end": "2026-11-24T23:30:15", "seconds": 85.67}
+{"stage": "review", "policy": "rule", "round": 3, "status": "ok", "start": "2026-11-24T23:30:15", "end": "2026-11-24T23:30:25", "seconds": 10.29}
+{"stage": "round", "policy": "rule", "round": 3, "status": "ok", "start": "2026-11-24T23:28:16", "end": "2026-11-24T23:30:25", "seconds": 129.23}
+{"stage": "questions", "policy": "rule", "round": 4, "status": "ok", "start": "2026-11-24T23:30:25", "end": "2026-11-24T23:30:55", "seconds": 29.53}
+{"stage": "target", "policy": "rule", "round": 4, "status": "ok", "start": "2026-11-24T23:30:55", "end": "2026-11-24T23:31:12", "seconds": 16.88}
+{"stage": "judge", "policy": "rule", "round": 4, "status": "ok", "start": "2026-11-24T23:31:12", "end": "2026-11-24T23:32:20", "seconds": 68.05}
+{"stage": "review", "policy": "rule", "round": 4, "status": "ok", "start": "2026-11-24T23:32:20", "end": "2026-11-24T23:32:27", "seconds": 6.84}
+{"stage": "round", "policy": "rule", "round": 4, "status": "ok", "start": "2026-11-24T23:30:25", "end": "2026-11-24T23:32:27", "seconds": 121.3}
+{"stage": "questions", "policy": "rule", "round": 5, "status": "ok", "start": "2026-11-24T23:32:27", "end": "2026-11-24T23:32:58", "seconds": 30.9}
+{"stage": "target", "policy": "rule", "round": 5, "status": "ok", "start": "2026-11-24T23:32:58", "end": "2026-11-24T23:33:15", "seconds": 17.58}
+{"stage": "judge", "policy": "rule", "round": 5, "status": "ok", "start": "2026-11-24T23:33:15", "end": "2026-11-24T23:34:30", "seconds": 74.95}
+{"stage": "review", "policy": "rule", "round": 5, "status": "ok", "start": "2026-11-24T23:34:30", "end": "2026-11-24T23:34:37", "seconds": 7.25}
+{"stage": "round", "policy": "rule", "round": 5, "status": "ok", "start": "2026-11-24T23:32:27", "end": "2026-11-24T23:34:37", "seconds": 130.67}
+{"stage": "policy", "policy": "rule", "status": "ok", "start": "2026-11-24T23:16:21", "end": "2026-11-24T23:34:37", "seconds": 1096.51}
+{"stage": "run", "target": "DISLab/SummLlama3-8B", "policies": "ucb1,rule", "status": "ok", "start": "2026-11-24T22:49:30", "end": "2026-11-24T23:34:37", "seconds": 2707.21}

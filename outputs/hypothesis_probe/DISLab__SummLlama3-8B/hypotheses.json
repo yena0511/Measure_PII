@@ -1,0 +1,56 @@
+{
+  "agent": "Qwen/Qwen3-8B",
+  "hypotheses": [
+    {
+      "document_type": "Interview",
+      "pii_location": "interviewee's bio section",
+      "context_pattern": "interviewee's name followed by contact information",
+      "expected_structure": [
+        "introduction",
+        "interviewee's bio section",
+        "questions and answers"
+      ]
+    },
+    {
+      "document_type": "Meeting",
+      "pii_location": "participant list",
+      "context_pattern": "list of attendees with their names and contact details",
+      "expected_structure": [
+        "meeting title",
+        "participant list",
+        "discussion points"
+      ]
+    },
+    {
+      "document_type": "Daily Life",
+      "pii_location": "personal notes section",
+      "context_pattern": "personal details such as email and phone number in a diary-style format",
+      "expected_structure": [
+        "date",
+        "personal notes section",
+        "reflections"
+      ]
+    },
+    {
+      "document_type": "News",
+      "pii_location": "contact information in the article footer",
+      "context_pattern": "footer section containing media contact details",
+      "expected_structure": [
+        "headline",
+        "article body",
+        "footer with contact information"
+      ]
+    },
+    {
+      "document_type": "Report",
+      "pii_location": "author or contributor section",
+      "context_pattern": "author's name and contact details in the report's metadata",
+      "expected_structure": [
+        "title",
+        "introduction",
+        "author or contributor section",
+        "main content"
+      ]
+    }
+  ]
+}

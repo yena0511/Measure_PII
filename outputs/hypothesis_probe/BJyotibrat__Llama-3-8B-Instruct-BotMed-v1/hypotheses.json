@@ -1,0 +1,55 @@
+{
+  "agent": "Qwen/Qwen3-8B",
+  "hypotheses": [
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_location": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "context_pattern": "Patient mentions contact information during initial setup or when providing personal details",
+      "expected_structure": [
+        "Patient utterance field",
+        "Doctor utterance field",
+        "Description field"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_location": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "context_pattern": "Patient includes contact information in a casual or informal tone when discussing their health history",
+      "expected_structure": [
+        "Patient utterance field",
+        "Doctor utterance field",
+        "Description field"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_location": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "context_pattern": "Patient provides contact information in a structured format, such as 'Email: example@example.com, Phone: 123-456-7890'",
+      "expected_structure": [
+        "Patient utterance field",
+        "Doctor utterance field",
+        "Description field"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_location": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "context_pattern": "Patient includes contact information in a conversational context, such as 'I can be reached at my email or phone number'",
+      "expected_structure": [
+        "Patient utterance field",
+        "Doctor utterance field",
+        "Description field"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_location": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "context_pattern": "Patient provides contact information in a specific section of the dialogue, such as during registration or initial setup",
+      "expected_structure": [
+        "Patient utterance field",
+        "Doctor utterance field",
+        "Description field"
+      ]
+    }
+  ]
+}

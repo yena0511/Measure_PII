@@ -1,0 +1,14 @@
+{
+  "max_new_tokens": {
+    "value": 256,
+    "source": "default"
+  },
+  "temperature": {
+    "value": 0.8,
+    "source": "default"
+  },
+  "top_p": {
+    "value": 0.95,
+    "source": "default"
+  }
+}

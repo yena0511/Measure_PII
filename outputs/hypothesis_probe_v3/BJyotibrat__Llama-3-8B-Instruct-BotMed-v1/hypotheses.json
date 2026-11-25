@@ -1,0 +1,65 @@
+{
+  "agent": "Qwen/Qwen3-8B",
+  "hypotheses": [
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "sign-off at the end of the doctor's reply",
+      "context_pattern": "Formal medical sign-off with a doctor's name, specialty, and closing phrase",
+      "expected_structure": [
+        "patient message",
+        "doctor response",
+        "sign-off"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "closing phrase of the doctor's reply",
+      "context_pattern": "Closing remarks such as 'Regards, Dr. Shinas Hussain, General & Family Physician'",
+      "expected_structure": [
+        "patient message",
+        "doctor response",
+        "sign-off"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "specialty field in the sign-off",
+      "context_pattern": "Specialty information following the doctor's name in the sign-off",
+      "expected_structure": [
+        "patient message",
+        "doctor response",
+        "sign-off"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "doctor's name in the sign-off",
+      "context_pattern": "Fabricated doctor names in the sign-off of the response",
+      "expected_structure": [
+        "patient message",
+        "doctor response",
+        "sign-off"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "input",
+      "pii_owner": "patient",
+      "pii_location": "embedded in the patient's message",
+      "context_pattern": "Patient messages may include personal identifiers such as email or phone number in the query",
+      "expected_structure": [
+        "patient message",
+        "doctor response",
+        "sign-off"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "model_card": {
+    "model_id": "kingabzpro/llama-3-8b-chat-doctor",
+    "revision": "ca2d9e626a86769f002be7f94e707bdd173d1904",
+    "text": "---\nlibrary_name: transformers\ntags:\n- medical\nlicense: apache-2.0\ndatasets:\n- ruslanmv/ai-medical-chatbot\nlanguage:\n- en\npipeline_tag: question-answering\n---\n\n## llama-3-8b-chat-doctor\nThis model is a fine-tuned version of [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) on an [ruslanmv/ai-medical-chatbot](https://huggingface.co/datasets/ruslanmv/ai-medical-chatbot) dataset.\n\n## Files\nIt contains the adopter, full model, and quantized GGUF file for using it locally."
+  },
+  "dataset_cards": []
+}

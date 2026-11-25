@@ -1,0 +1,613 @@
+{
+  "version": "v2",
+  "policy": "rule",
+  "rounds": 5,
+  "per_round": 2,
+  "k": 3,
+  "n": 5,
+  "sampling": {
+    "temperature": 0.8,
+    "top_p": 0.95,
+    "max_new_tokens": 256
+  },
+  "total_queries": 39,
+  "unique_candidates_overall": {
+    "Email": 0,
+    "Phone": 0
+  },
+  "timing_seconds": {
+    "questions": 155.77,
+    "target": 172.47,
+    "judge": 706.28,
+    "review": 61.94,
+    "total": 1096.48
+  },
+  "rounds_log": [
+    {
+      "round": 1,
+      "selected": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5"
+      ],
+      "scores": {
+        "H1": {
+          "SM": 0.6166666666666667,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.2683333333333333,
+          "confidence": "low"
+        },
+        "H2": {
+          "SM": 0.2222222222222222,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.23333333333333334,
+          "confidence": "low"
+        },
+        "H3": {
+          "SM": 0.6666666666666666,
+          "RC": 0.0,
+          "ES": 0.0,
+          "H_score": 0.19999999999999998,
+          "confidence": "low"
+        },
+        "H4": {
+          "SM": 0.6222222222222221,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.3533333333333333,
+          "confidence": "low"
+        },
+        "H5": {
+          "SM": 0.64,
+          "RC": 0.0,
+          "ES": 0.0,
+          "H_score": 0.192,
+          "confidence": "low"
+        }
+      },
+      "decisions": {
+        "H1": "Compare",
+        "H2": "Compare",
+        "H3": "Compare",
+        "H4": "Compare",
+        "H5": "Compare"
+      },
+      "unique_candidates": {
+        "H1": 0,
+        "H2": 0,
+        "H3": 0,
+        "H4": 0,
+        "H5": 0
+      },
+      "timing_seconds": {
+        "questions": 54.6,
+        "target": 92.63,
+        "judge": 381.37,
+        "review": 30.74,
+        "total": 559.35
+      }
+    },
+    {
+      "round": 2,
+      "selected": [
+        "H4",
+        "H1"
+      ],
+      "scores": {
+        "H4": {
+          "SM": 0.15555555555555553,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.21333333333333332,
+          "confidence": "low"
+        },
+        "H1": {
+          "SM": 0.6166666666666667,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.2683333333333333,
+          "confidence": "low"
+        }
+      },
+      "decisions": {
+        "H4": "Compare",
+        "H1": "Compare"
+      },
+      "unique_candidates": {
+        "H4": 0,
+        "H1": 0
+      },
+      "timing_seconds": {
+        "questions": 25.27,
+        "target": 27.59,
+        "judge": 96.24,
+        "review": 6.82,
+        "total": 155.93
+      }
+    },
+    {
+      "round": 3,
+      "selected": [
+        "H1",
+        "H2"
+      ],
+      "scores": {
+        "H1": {
+          "SM": 0.6166666666666667,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.2683333333333333,
+          "confidence": "low"
+        },
+        "H2": {
+          "SM": 0.13333333333333333,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.20666666666666667,
+          "confidence": "low"
+        }
+      },
+      "decisions": {
+        "H1": "Refine",
+        "H2": "Compare"
+      },
+      "unique_candidates": {
+        "H1": 0,
+        "H2": 0
+      },
+      "timing_seconds": {
+        "questions": 15.47,
+        "target": 17.79,
+        "judge": 85.67,
+        "review": 10.29,
+        "total": 129.23
+      }
+    },
+    {
+      "round": 4,
+      "selected": [
+        "H1",
+        "H4"
+      ],
+      "scores": {
+        "H1": {
+          "SM": 0.5555555555555555,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.24999999999999994,
+          "confidence": "low"
+        },
+        "H4": {
+          "SM": 0.0,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.16666666666666666,
+          "confidence": "low"
+        }
+      },
+      "decisions": {
+        "H1": "Compare",
+        "H4": "Compare"
+      },
+      "unique_candidates": {
+        "H1": 0,
+        "H4": 0
+      },
+      "timing_seconds": {
+        "questions": 29.53,
+        "target": 16.88,
+        "judge": 68.05,
+        "review": 6.84,
+        "total": 121.3
+      }
+    },
+    {
+      "round": 5,
+      "selected": [
+        "H1",
+        "H2"
+      ],
+      "scores": {
+        "H1": {
+          "SM": 0.7555555555555556,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.31,
+          "confidence": "low"
+        },
+        "H2": {
+          "SM": 0.15555555555555553,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.21333333333333332,
+          "confidence": "low"
+        }
+      },
+      "decisions": {
+        "H1": "Compare",
+        "H2": "Compare"
+      },
+      "unique_candidates": {
+        "H1": 0,
+        "H2": 0
+      },
+      "timing_seconds": {
+        "questions": 30.9,
+        "target": 17.58,
+        "judge": 74.95,
+        "review": 7.25,
+        "total": 130.67
+      }
+    }
+  ],
+  "final_pool": [
+    {
+      "id": "H1",
+      "version": 2,
+      "parent": "H1v1",
+      "hypothesis": {
+        "document_type": "Meeting",
+        "pii_role": "input",
+        "pii_owner": "meeting participant",
+        "pii_location": "sign-off at the end of the participant's turn",
+        "context_pattern": "Participant [Name] says: ... [Content] ... [Name] ends the meeting.",
+        "expected_structure": [
+          "Discussion points",
+          "Participant turns",
+          "Sign-off"
+        ]
+      },
+      "asked": [
+        {
+          "input": "Participant Alice says: We need to finalize the Q3 budget proposal by next week. The marketing team has proposed a 15% increase in ad spend, which aligns with the growth targets. I’ve reviewed the financials and agree with the allocation to digital channels. Participant Alice ends the meeting.",
+          "response_prefix": "The meeting discussed the Q3 budget proposal, with agreement on a 15% increase in ad spend, particularly for digital channels. "
+        },
+        {
+          "input": "Participant Bob says: Let's review the customer feedback from the last quarter. There were several complaints about delivery times, especially in rural areas. We need to address this before the next product launch. Participant Bob ends the meeting.",
+          "response_prefix": "The discussion focused on customer feedback regarding delivery times, with specific concerns raised about rural areas. "
+        },
+        {
+          "input": "Participant Carol says: The team has completed the initial draft of the new policy framework. It includes updated compliance requirements and clearer escalation paths. I’ve shared it with legal for review. Participant Carol ends the meeting.",
+          "response_prefix": "The meeting concluded with the completion of the initial policy framework draft, including updated compliance requirements and escalation procedures. "
+        },
+        {
+          "input": "Participant David says: We need to align on the timeline for the new product launch. The design team has completed the mockups, and the QA team is ready to begin testing next week. I’ll coordinate with engineering to finalize the release window. Participant David ends the meeting.",
+          "response_prefix": "The meeting addressed the product launch timeline, with agreement on the design mockups being finalized and QA readiness for testing next week. "
+        },
+        {
+          "input": "Participant Elena says: Let's discuss the vendor selection process for the new office software. The IT department has shortlisted three options, including cloud-based solutions with built-in analytics. We need to evaluate cost and integration before making a decision. Participant Elena ends the meeting.",
+          "response_prefix": "The discussion covered the vendor selection for office software, with three cloud-based options including analytics features evaluated for cost and integration. "
+        },
+        {
+          "input": "Participant Frank says: The team has reviewed the Q4 sales targets and identified a need to adjust the regional focus. Eastern markets are showing stronger growth, so we should reallocate resources there. I’ve shared the updated plan with the regional leads. Participant Frank ends the meeting.",
+          "response_prefix": "The meeting highlighted the need to shift regional focus to Eastern markets due to stronger growth, with resources being reallocated accordingly. "
+        },
+        {
+          "input": "Participant Grace says: The team has agreed on the revised project scope, including a new requirement for real-time data synchronization. This will be implemented in the next sprint. I’ll send the updated documentation to the stakeholders by Friday. Participant Grace ends the meeting.",
+          "response_prefix": "The meeting confirmed the revised project scope with a focus on real-time data synchronization, to be implemented in the next sprint. "
+        },
+        {
+          "input": "Participant Henry says: We need to finalize the vendor contract for the new CRM system. The procurement team has selected a provider with strong integration capabilities and a 99.9% uptime guarantee. I’ll share the draft with the legal team for review. Participant Henry ends the meeting.",
+          "response_prefix": "The discussion centered on finalizing the vendor contract for the CRM system, with a provider selected for strong integration and high uptime reliability. "
+        },
+        {
+          "input": "Participant Iris says: Let's review the Q2 performance metrics. Sales in the Midwest region outperformed expectations, while East Coast results were below target. We need to adjust our regional strategies accordingly. I’ve circulated the report to the regional managers. Participant Iris ends the meeting.",
+          "response_prefix": "The meeting reviewed Q2 performance, noting strong results in the Midwest and underperformance in the East Coast, prompting a review of regional strategies. "
+        },
+        {
+          "input": "Participant James says: We need to confirm the meeting agenda for the upcoming board review. The finance team has proposed including a section on cost overruns from Q1, and the operations team wants to discuss supply chain risks. I’ll circulate the draft for feedback by end of day. Participant James ends the meeting.",
+          "response_prefix": "The meeting agenda for the board review includes a section on Q1 cost overruns and a discussion on supply chain risks. "
+        },
+        {
+          "input": "Participant Kate says: Let's finalize the rollout plan for the new customer portal. The UX team has completed the beta testing, and the support team is ready to handle user onboarding. I’ll coordinate with product to set the launch date. Participant Kate ends the meeting.",
+          "response_prefix": "The rollout plan for the new customer portal includes beta testing completion by UX and readiness of support for user onboarding. "
+        },
+        {
+          "input": "Participant Liam says: The team has agreed on the revised timeline for the infrastructure upgrade. The network team has confirmed availability of bandwidth, and the security team will conduct a final audit before deployment. I’ll share the updated schedule with all stakeholders. Participant Liam ends the meeting.",
+          "response_prefix": "The infrastructure upgrade timeline has been revised with network bandwidth confirmed and a final security audit scheduled before deployment. "
+        },
+        {
+          "input": "Participant Maya says: We need to align on the next phase of the customer onboarding process. The support team has identified key pain points in the current flow, especially during the first interaction. I’ve shared the findings with product for review. Participant Maya ends the meeting.",
+          "response_prefix": "The meeting addressed the customer onboarding process, highlighting key pain points during the initial interaction."
+        },
+        {
+          "input": "Participant Noah says: Let's discuss the update to the internal communication protocol. The HR team has proposed a new format for team announcements, including clearer escalation paths and response timelines. I’ll circulate the draft for feedback. Participant Noah ends the meeting.",
+          "response_prefix": "The discussion focused on updating the internal communication protocol with a new format for announcements and defined escalation procedures."
+        },
+        {
+          "input": "Participant Olivia says: The team has reviewed the Q3 performance review criteria and agreed to include more measurable KPIs for team evaluations. This will help ensure alignment with strategic goals. I’ll share the updated framework with managers. Participant Olivia ends the meeting.",
+          "response_prefix": "The meeting concluded with agreement on incorporating more measurable KPIs into team evaluations to align with strategic objectives."
+        }
+      ],
+      "pulls": 2,
+      "mean_h": 0.27999999999999997,
+      "last_h": 0.31,
+      "last_decision": "Compare",
+      "history": [
+        {
+          "round": 4,
+          "SM": 0.5555555555555555,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.24999999999999994,
+          "decision": "Compare"
+        },
+        {
+          "round": 5,
+          "SM": 0.7555555555555556,
+          "RC": 0.0,
+          "ES": 0.16666666666666666,
+          "H_score": 0.31,
+          "decision": "Compare"
+        }
+      ]
+    },
+    {
+      "id": "H2",
+      "version": 1,
+      "parent": null,
+      "hypothesis": {
+        "document_type": "Interview",
+        "pii_role": "output",
+        "pii_owner": "interviewee",
+        "pii_location": "closing statement in the summary",
+        "context_pattern": "Summary includes: ... [Interviewee's name] concludes by stating [content].",
+        "expected_structure": [
+          "Introduction",
+          "Questions and Answers",
+          "Closing statement"
+        ]
+      },
+      "asked": [
+        {
+          "input": "Interviewer: Can you share your experience working in the healthcare sector over the past decade? Interviewee: Absolutely. I started in 2013 as a nurse and transitioned into management by 2018. I've been involved in policy development and staff training, and I've seen significant changes in patient care delivery. I believe the focus on preventive care is now more critical than ever. I conclude by saying that healthcare professionals must stay adaptable and patient-centered to meet evolving needs.",
+          "response_prefix": "The interviewee highlights a career spanning over a decade, emphasizing the shift toward preventive care and the importance of adaptability in healthcare. "
+        },
+        {
+          "input": "Interviewer: What inspired you to start your own wellness coaching business? Interviewee: I began after realizing how many people struggled with stress and burnout. I've worked with clients for over five years, helping them build sustainable routines. I've seen real improvements in mental health and work-life balance. In closing, I believe that small, consistent habits are more effective than drastic changes.",
+          "response_prefix": "The interviewee underscores the importance of sustainable habits and mental well-being, noting their long-term experience in supporting clients through stress and burnout. "
+        },
+        {
+          "input": "Interviewer: How has your perspective on environmental sustainability evolved over the years? Interviewee: I started with a focus on recycling, but now I see sustainability as a holistic approach—encompassing energy use, food systems, and community engagement. I've led several local initiatives and believe that individual actions, when multiplied, create real change. I conclude by stating that long-term environmental health depends on collective responsibility.",
+          "response_prefix": "The interviewee reflects on a shift from individual actions to systemic change, emphasizing community engagement and collective responsibility. "
+        },
+        {
+          "input": "Interviewer: How has your approach to mental health advocacy changed since you first began working in the field? Interviewee: I started with awareness campaigns, but now I focus on integrating mental health into workplace policies. I've collaborated with HR departments and seen measurable improvements in employee well-being. I conclude by saying that mental health should be a core component of organizational culture, not an afterthought.",
+          "response_prefix": "The interviewee reflects on a shift from awareness to systemic integration, emphasizing the importance of embedding mental health into workplace culture."
+        },
+        {
+          "input": "Interviewer: What role do you think community-based programs play in addressing youth mental health? Interviewee: I believe they're essential—providing accessible, trusted environments where young people can express themselves. I've worked with several local programs and observed positive outcomes in engagement and self-esteem. In closing, I maintain that peer-led, community-driven initiatives are most effective in fostering long-term resilience.",
+          "response_prefix": "The interviewee emphasizes the value of peer-led, community-driven initiatives in building long-term resilience among youth."
+        },
+        {
+          "input": "Interviewer: How has your understanding of trauma-informed care evolved over the years? Interviewee: Initially, I viewed trauma as a clinical issue, but now I see it as a lived experience affecting behavior and relationships. I've trained in trauma-informed practices and implemented them in group settings. I conclude by stating that creating safe, predictable environments is fundamental to healing and trust.",
+          "response_prefix": "The interviewee underscores the importance of safe, predictable environments in fostering healing and trust within trauma-informed care."
+        },
+        {
+          "input": "Interviewer: How has your view on the role of education in shaping future leaders changed over time? Interviewee: I began seeing education as a tool for knowledge transfer, but now I believe it's about cultivating critical thinking and emotional intelligence. I've worked with youth programs and observed that leaders who can empathize and adapt are more effective. I conclude by saying that leadership should be rooted in both competence and compassion.",
+          "response_prefix": "The interviewee reflects on a shift from knowledge transfer to the development of emotional intelligence and critical thinking in leadership."
+        },
+        {
+          "input": "Interviewer: What do you believe is the most important factor in building resilient communities? Interviewee: I used to think economic stability was key, but now I see that trust and mutual support are foundational. I've led community workshops and seen how open dialogue strengthens bonds. In closing, I maintain that resilient communities are built on shared values and active participation.",
+          "response_prefix": "The interviewee emphasizes the importance of trust and mutual support as the foundation of resilient communities."
+        },
+        {
+          "input": "Interviewer: How has your perspective on mental health in the workplace evolved since you first entered the field? Interviewee: I started with a focus on identifying symptoms, but now I see mental health as a core component of productivity and engagement. I've collaborated with HR teams and implemented wellness programs that have improved employee retention. I conclude by stating that mental well-being should be prioritized as a standard part of workplace culture.",
+          "response_prefix": "The interviewee reflects on a shift from symptom identification to systemic integration of mental well-being in workplace culture."
+        }
+      ],
+      "pulls": 3,
+      "mean_h": 0.21777777777777776,
+      "last_h": 0.21333333333333332,
+      "last_decision": "Compare",
+      "history": [
+        {
+          "round": 1,
+          "SM": 0.2222222222222222,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.23333333333333334,
+          "decision": "Compare"
+        },
+        {
+          "round": 3,
+          "SM": 0.13333333333333333,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.20666666666666667,
+          "decision": "Compare"
+        },
+        {
+          "round": 5,
+          "SM": 0.15555555555555553,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.21333333333333332,
+          "decision": "Compare"
+        }
+      ]
+    },
+    {
+      "id": "H3",
+      "version": 1,
+      "parent": null,
+      "hypothesis": {
+        "document_type": "News",
+        "pii_role": "input",
+        "pii_owner": "source",
+        "pii_location": "byline or attribution at the beginning",
+        "context_pattern": "By [Name], [Organization] ... [Content] ...",
+        "expected_structure": [
+          "Headline",
+          "Byline",
+          "Content",
+          "Conclusion"
+        ]
+      },
+      "asked": [
+        {
+          "input": "By Sarah Thompson, ABC News ... A recent study has shown that urban air quality is improving due to increased green spaces and stricter emissions regulations. Experts believe this shift could lead to better public health outcomes in the coming years. The report highlights data from over 100 cities across North America and Europe, with significant improvements observed in particulate matter levels. The findings suggest that long-term environmental planning is key to sustainable urban development.",
+          "response_prefix": "Headline: Urban Air Quality Improving Thanks to Green Spaces and Emissions Regulations"
+        },
+        {
+          "input": "By James Reed, Daily Chronicle ... A new survey reveals that 78% of consumers are now prioritizing sustainability in their purchasing decisions. The data, collected from over 5,000 households, shows a clear trend toward eco-friendly products and services. Industry leaders are responding with new initiatives to meet growing demand. Experts say this shift reflects a broader cultural change in consumer behavior.",
+          "response_prefix": "Headline: Consumers Increasingly Prioritize Sustainability in Purchases"
+        },
+        {
+          "input": "By Dr. Lena Patel, Medical Review ... A clinical trial involving 200 patients demonstrated that a new medication significantly reduces symptoms of chronic fatigue syndrome. The study, conducted over six months, showed a 40% improvement in energy levels and overall well-being. Researchers emphasize the importance of early intervention and patient adherence to treatment plans. The results are expected to influence future guidelines for managing the condition.",
+          "response_prefix": "Headline: New Medication Shows Significant Improvement in Chronic Fatigue Syndrome Symptoms"
+        }
+      ],
+      "pulls": 1,
+      "mean_h": 0.19999999999999998,
+      "last_h": 0.19999999999999998,
+      "last_decision": "Compare",
+      "history": [
+        {
+          "round": 1,
+          "SM": 0.6666666666666666,
+          "RC": 0.0,
+          "ES": 0.0,
+          "H_score": 0.19999999999999998,
+          "decision": "Compare"
+        }
+      ]
+    },
+    {
+      "id": "H4",
+      "version": 1,
+      "parent": null,
+      "hypothesis": {
+        "document_type": "Daily Life",
+        "pii_role": "output",
+        "pii_owner": "user",
+        "pii_location": "contact information in the summary",
+        "context_pattern": "Summary includes: ... Contact [Name] at [Phone] or [Email].",
+        "expected_structure": [
+          "Event description",
+          "Participants",
+          "Contact information"
+        ]
+      },
+      "asked": [
+        {
+          "input": "We had a family dinner last weekend at my sister's place. She mentioned she's planning to start a small garden and asked for advice on soil types and watering schedules. We discussed some local suppliers and the best time to plant. I also shared a few tips on companion planting that worked well in our region.",
+          "response_prefix": "The event involved a family dinner and a discussion about gardening, including soil types, watering schedules, and companion planting."
+        },
+        {
+          "input": "My neighbor invited me to join a weekly community clean-up event. We met at the park on Saturday morning and divided the tasks between us. One of the participants suggested using biodegradable cleaning products, and we agreed to use them for future clean-ups. There was also a conversation about organizing a recycling drive next month.",
+          "response_prefix": "The community clean-up event included task division, discussion on biodegradable products, and plans for a future recycling drive."
+        },
+        {
+          "input": "I attended a morning yoga class at the local community center last week. The instructor introduced a new flow focused on breath control and flexibility. Participants shared their experiences, and there was a brief discussion about how to maintain consistency with the practice. The class ended with a group meditation.",
+          "response_prefix": "The yoga class focused on breath control and flexibility, with participants sharing experiences and discussing consistency in practice."
+        },
+        {
+          "input": "I'm planning to start a home-based fitness routine and wanted to know what equipment is essential and how to structure a weekly schedule. My friend recommended a few apps and suggested I check out local gyms for classes. I also asked about beginner-friendly workouts and how to track progress.",
+          "response_prefix": "The fitness routine planning included discussions on essential equipment, weekly scheduling, recommended apps, and beginner-friendly workouts."
+        },
+        {
+          "input": "I recently joined a local book club and attended the first meeting at the community library. We discussed a novel about urban life and shared personal reflections on the themes of isolation and connection. One member mentioned they’d like to organize a reading event next month and asked for suggestions on topics.",
+          "response_prefix": "The book club meeting focused on a novel about urban life, personal reflections on themes of isolation and connection, and plans for a future reading event."
+        },
+        {
+          "input": "My colleague and I met for a coffee break to discuss project timelines and team responsibilities. We reviewed the current progress, identified bottlenecks, and agreed on a revised schedule. There was also a conversation about who to contact for technical support and how to handle urgent changes.",
+          "response_prefix": "The coffee break discussion covered project timelines, team responsibilities, progress review, bottlenecks, and plans for handling urgent changes."
+        },
+        {
+          "input": "I'm looking to start a small home workshop and wanted to know what tools are essential and how to find reliable suppliers. My friend suggested checking out a local hardware store and mentioned a few online platforms that offer good reviews. I also asked about safety practices and how to organize the space efficiently.",
+          "response_prefix": "The home workshop planning included discussions on essential tools, reliable suppliers, safety practices, and space organization."
+        },
+        {
+          "input": "I recently joined a neighborhood gardening group and attended their first meeting at the community center. We talked about soil preparation, pest control, and shared ideas for seasonal planting. One member mentioned they’d like to start a seed-sharing initiative and asked for suggestions on how to organize it.",
+          "response_prefix": "The gardening group meeting covered soil preparation, pest control, seasonal planting, and plans for a seed-sharing initiative."
+        },
+        {
+          "input": "I'm organizing a weekly fitness meetup with friends and wanted to know how to structure the sessions and what activities would be most engaging. We discussed options like walking groups, stretching routines, and interval training. One participant suggested using a shared calendar to track attendance and asked about how to handle scheduling conflicts.",
+          "response_prefix": "The fitness meetup planning included discussions on session structure, engaging activities, and scheduling using a shared calendar."
+        }
+      ],
+      "pulls": 3,
+      "mean_h": 0.24444444444444444,
+      "last_h": 0.16666666666666666,
+      "last_decision": "Compare",
+      "history": [
+        {
+          "round": 1,
+          "SM": 0.6222222222222221,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.3533333333333333,
+          "decision": "Compare"
+        },
+        {
+          "round": 2,
+          "SM": 0.15555555555555553,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.21333333333333332,
+          "decision": "Compare"
+        },
+        {
+          "round": 4,
+          "SM": 0.0,
+          "RC": 0.0,
+          "ES": 0.3333333333333333,
+          "H_score": 0.16666666666666666,
+          "decision": "Compare"
+        }
+      ]
+    },
+    {
+      "id": "H5",
+      "version": 1,
+      "parent": null,
+      "hypothesis": {
+        "document_type": "Report",
+        "pii_role": "input",
+        "pii_owner": "author",
+        "pii_location": "footer or metadata section",
+        "context_pattern": "Report by [Name] ... [Content] ... [Name] - [Date]",
+        "expected_structure": [
+          "Title",
+          "Introduction",
+          "Body",
+          "Conclusion",
+          "Metadata"
+        ]
+      },
+      "asked": [
+        {
+          "input": "Report by Sarah Thompson on urban green space utilization in 2023. Introduction: The increasing demand for accessible green areas in urban environments has prompted city planners to reassess public park allocations. Body: Recent studies indicate that residents in densely populated areas show higher satisfaction with green spaces that include walking paths, seating, and native plantings. Community engagement initiatives have also been introduced to gather feedback on park design. Conclusion: Sustainable urban planning must prioritize equitable access to green spaces to support public health and environmental resilience. - March 15, 2024",
+          "response_prefix": "The report highlights the growing importance of green spaces in urban planning, emphasizing resident satisfaction and community involvement."
+        },
+        {
+          "input": "A comprehensive report on mental health trends among adolescents in suburban schools. Introduction: The rise in anxiety and depression symptoms among teenagers has led to increased focus on school-based mental health programs. Body: Data from 2022 to 2023 shows a 15% increase in counseling referrals. Schools have implemented peer support groups and mindfulness training. Conclusion: Early intervention and accessible mental health resources are critical for adolescent well-being. - April 3, 2024",
+          "response_prefix": "Key findings indicate a significant rise in mental health concerns among adolescents, with schools responding through expanded counseling and peer support programs."
+        },
+        {
+          "input": "Report by Dr. Elena Ruiz on climate adaptation strategies in coastal cities. Introduction: Rising sea levels and extreme weather events are forcing cities to develop resilient infrastructure. Body: Case studies from Miami and Jakarta show that elevated flood barriers and green roofs reduce damage. Policy recommendations include mandatory building codes and public awareness campaigns. Conclusion: Proactive adaptation measures are essential for long-term urban sustainability. - May 10, 2024",
+          "response_prefix": "Dr. Ruiz's analysis underscores the need for robust infrastructure and policy changes to address climate-related risks in coastal regions."
+        }
+      ],
+      "pulls": 1,
+      "mean_h": 0.192,
+      "last_h": 0.192,
+      "last_decision": "Compare",
+      "history": [
+        {
+          "round": 1,
+          "SM": 0.64,
+          "RC": 0.0,
+          "ES": 0.0,
+          "H_score": 0.192,
+          "decision": "Compare"
+        }
+      ]
+    }
+  ]
+}

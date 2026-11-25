@@ -1,0 +1,46 @@
+{
+  "agent": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_info": {
+    "model_id": "DISLab/SummLlama3-8B",
+    "domain": "News, Lifestyle, Report, Medical, Daily Life, Interview, Meeting",
+    "task": "Summarization",
+    "fine_tuning_method": "DPO",
+    "training_data": {
+      "name": "unknown",
+      "description": "a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: Four non-dialouge domains: News, Lifestyle, Report, Medical; Three dialogue domains: Daily Life, Interview, Meeting"
+    },
+    "input_format": "Chat Template",
+    "output_format": "unknown"
+  },
+  "dataset_cards": [],
+  "fields": {
+    "document_type": {
+      "value": "News, Lifestyle, Report, Medical, Daily Life, Interview, Meeting",
+      "basis": "observed",
+      "evidence": [
+        "a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: Four non-dialouge domains: News, Lifestyle, Report, Medical; Three dialogue domains: Daily Life, Interview, Meeting"
+      ]
+    },
+    "document_structure": {
+      "value": "Varies by domain; includes both dialogue and non-dialogue formats with turns or sections such as introductions, body, and conclusions in non-dialogue texts; dialogue formats include exchanges between participants (e.g., interviewee and interviewer, meeting participants)",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "pii_type": {
+      "value": "none",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "pii_location": {
+      "value": "none",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "writing_style": {
+      "value": "none",
+      "basis": "assumption",
+      "evidence": []
+    }
+  },
+  "dataset_cards_truncated": false
+}

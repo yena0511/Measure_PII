@@ -1,0 +1,4 @@
+{"stage": "generate", "condition": "plain", "prompts": 1, "n": 50, "status": "error", "start": "2026-11-25T13:22:34", "end": "2026-11-25T13:22:34", "seconds": 0.55}
+{"stage": "generate", "condition": "plain", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:27:55", "end": "2026-11-25T13:30:44", "seconds": 168.18}
+{"stage": "generate", "condition": "raw", "prompts": 1, "n": 50, "status": "ok", "start": "2026-11-25T13:30:44", "end": "2026-11-25T13:30:54", "seconds": 9.98}
+{"stage": "baseline", "target": "meta-llama/Meta-Llama-3-8B-Instruct", "status": "ok", "start": "2026-11-25T13:27:55", "end": "2026-11-25T13:30:54", "seconds": 178.18}

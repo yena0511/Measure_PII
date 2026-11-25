@@ -1,0 +1,42 @@
+{
+  "model_id": "DISLab/SummLlama3-8B",
+  "domain": "News, Lifestyle, Report, Medical, Daily Life, Interview, Meeting",
+  "task": "Summarization",
+  "fine_tuning_method": "DPO",
+  "training_data": {
+    "name": "unknown",
+    "description": "a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: Four non-dialouge domains: News, Lifestyle, Report, Medical; Three dialogue domains: Daily Life, Interview, Meeting"
+  },
+  "input_format": "Chat Template",
+  "output_format": "Summary",
+  "evidence": {
+    "domain": [
+      "The feedback encompasses a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: - Four non-dialouge domains: News, Lifestyle, Report, Medical - Three dialogue domains: Daily Life, Interview, Meeting"
+    ],
+    "task": [
+      "Are you looking for a summarizer that can generate more human-preferred summaries across multiple domains?",
+      "pipeline_tag: summarization"
+    ],
+    "fine_tuning_method": [
+      "SummLlama3 is initialized from Llama3-8B-Instruct, with additional training using Direct Preference Optimization (DPO) based on large-scale (over 100K) summarization feedback."
+    ],
+    "training_data": [
+      "The feedback encompasses a wide range of input documents, from short to lengthy texts, including both dialogue and non-dialogue formats, and spans across seven distinct domains: - Four non-dialouge domains: News, Lifestyle, Report, Medical - Three dialogue domains: Daily Life, Interview, Meeting"
+    ],
+    "input_format": [
+      "We recommend to use the prompt below to get the summary, since we trained the model using this.\n\n```\ndef format_chat_template(document):\n    instruction = \"Please summarize the input documnet.\"\n    row_json = [{\"role\": \"user\", \"content\": f\"Below is an instruction that describes a task. Write a response that appropriately completes the request.\n\n### Instruction:\n{instruction}\n\n### Input:\n{document}\n\n### Response:\n\"}]\n    return tokenizer.apply_chat_template(row_json, tokenize=False)\n```"
+    ],
+    "output_format": [
+      "The summary of SummLlama3-8B can be considered a much human-preferred summary for the following reasons: Core Focus: The summary accurately captures the main theme of the conversation, which revolves around the Thanksgiving dinner arrangements."
+    ]
+  },
+  "unverified_evidence": [],
+  "rejected_values": {},
+  "extraction": {
+    "card_revision": "d5f337330c8efac4d2a8c9ac9ed6cca94988738e",
+    "card_truncated": false,
+    "llm": "Qwen/Qwen3-8B",
+    "decoding": "greedy, non-thinking",
+    "verifier": "v2"
+  }
+}

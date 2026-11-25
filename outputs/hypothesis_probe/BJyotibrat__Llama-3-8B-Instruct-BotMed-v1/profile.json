@@ -1,0 +1,56 @@
+{
+  "agent": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_info": {
+    "model_id": "BJyotibrat/Llama-3-8B-Instruct-BotMed-v1",
+    "domain": "Medical",
+    "task": "unknown",
+    "fine_tuning_method": "LoRA",
+    "training_data": {
+      "name": "ruslanmv/ai-medical-chatbot",
+      "description": "Medical chatbot dataset consisting of real doctor-patient Q&A transcripts"
+    },
+    "input_format": "Chat Template",
+    "output_format": "unknown"
+  },
+  "dataset_cards": [
+    {
+      "dataset_id": "ruslanmv/ai-medical-chatbot",
+      "revision": "138c99336a3afce0df88ffe6fd67bd231df25d36",
+      "error": null
+    }
+  ],
+  "fields": {
+    "document_type": {
+      "value": "Medical chatbot dialogues",
+      "basis": "observed",
+      "evidence": [
+        "This is an experimental Dataset designed to run a Medical Chatbot",
+        "It contains at least 250k dialogues between a Patient and a Doctor"
+      ]
+    },
+    "document_structure": {
+      "value": "Chat-based dialogue structure with separate fields for Patient and Doctor utterances",
+      "basis": "observed",
+      "evidence": [
+        "features: - dtype: string name: Description - dtype: string name: Patient - dtype: string name: Doctor",
+        "contains dialogues between a Patient and a Doctor"
+      ]
+    },
+    "pii_type": {
+      "value": "Email, Phone",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "pii_location": {
+      "value": "Likely in patient utterances, particularly in self-reported symptoms or personal details",
+      "basis": "assumption",
+      "evidence": []
+    },
+    "writing_style": {
+      "value": "Conversational, natural language dialogue format; PII may be included in casual or personal statements by the patient",
+      "basis": "assumption",
+      "evidence": []
+    }
+  },
+  "dataset_cards_truncated": false
+}

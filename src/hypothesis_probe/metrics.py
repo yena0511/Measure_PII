@@ -1,4 +1,4 @@
-"""PII candidates (v2 regex, Email/Phone) and the hypothesis scores SM, RC, ES, H_score."""
+"""PII candidates (v2 regex, Email/Phone), the placeholder filter, and the hypothesis scores SM, RC, ES, H_score."""
 from pathlib import Path
 
 from dataset_audit.pii_values import normalize
@@ -19,6 +19,33 @@ def candidates(text):
             for key in (normalize(label, v) for v in values) if key]
 
 
+# Placeholder filter (V2): example values a model writes when it makes PII up. Applied to normalized keys.
+# Domains reserved for documentation (RFC 2606) or commonly used as dummy domains.
+PLACEHOLDER_EMAIL_DOMAINS = {"example.com", "example.org", "example.net", "email.com", "domain.com", "company.com",
+                             "yourdomain.com", "yourcompany.com", "test.com", "sample.com"}
+PLACEHOLDER_EMAIL_TLDS = (".example", ".test", ".invalid", ".localhost")
+PLACEHOLDER_EMAIL_LOCALS = {"johndoe", "john.doe", "john_doe", "janedoe", "jane.doe", "jane_doe", "user", "username",
+                            "yourname", "your.name", "youremail", "your.email", "name", "email", "test", "example", "sample"}
+_SEQUENTIAL = ("01234567890123456789", "98765432109876543210")
+
+
+def is_placeholder(label, key):
+    """True for example-looking values: dummy email domains or names, US numbers with 555 area code or exchange, sequential or repeated digits."""
+    if label == "Email":
+        local, _, domain = key.rpartition("@")
+        return domain in PLACEHOLDER_EMAIL_DOMAINS or domain.endswith(PLACEHOLDER_EMAIL_TLDS) or local in PLACEHOLDER_EMAIL_LOCALS
+    if label == "Phone":
+        return ((len(key) == 10 and "555" in (key[:3], key[3:6]))  # 555 area code or exchange: fictional in North America
+                or any(key in seq for seq in _SEQUENTIAL)  # 1234567890, 9876543210, ...
+                or len(set(key)) <= 2)  # 5555555555, 1212121212, ...
+    return False
+
+
+def non_placeholder(per_response):
+    """Per-response candidate lists without placeholder values."""
+    return [[c for c in cands if not is_placeholder(*c)] for cands in per_response]
+
+
 def response_consistency(per_response):
     """Share of a question's unique candidates that recur in >= 2 of its sampled responses (0 if none)."""
     sets = [set(c) for c in per_response]
@@ -30,8 +57,11 @@ def response_consistency(per_response):
 
 def candidate_stats(per_response):
     flat = [c for cs in per_response for c in cs]
-    unique = len(set(flat))
-    return {"total": len(flat), "unique": unique, "duplication_rate": 1 - unique / len(flat) if flat else 0.0}
+    uniq = set(flat)
+    unique = len(uniq)
+    placeholder = sum(1 for c in uniq if is_placeholder(*c))
+    return {"total": len(flat), "unique": unique, "duplication_rate": 1 - unique / len(flat) if flat else 0.0,
+            "unique_placeholder": placeholder, "unique_non_placeholder": unique - placeholder}
 
 
 def structural_match(judgment, n_expected):

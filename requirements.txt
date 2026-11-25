@@ -11,3 +11,5 @@ spacy==3.8.18
 torch==2.15.0
 tqdm==4.70.1
 transformers==5.22.2
+bitsandbytes==0.50.2
+json-repair==0.64.9

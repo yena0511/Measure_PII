@@ -1,0 +1,45 @@
+{
+  "model_id": "BJyotibrat/Llama-3-8B-Instruct-BotMed-v1",
+  "domain": "Medical",
+  "task": "Chat",
+  "fine_tuning_method": "LoRA",
+  "training_data": {
+    "name": "ruslanmv/ai-medical-chatbot",
+    "description": "Medical chatbot dataset consisting of real doctor-patient Q&A transcripts"
+  },
+  "input_format": "Chat Template",
+  "output_format": "Answer",
+  "evidence": {
+    "domain": [
+      "Medical"
+    ],
+    "task": [
+      "Intended for medical chatbot / medical question-answering conversational use cases.",
+      "As the first fine-tuning run in the BotMed project, Llama-3-8B-Instruct-BotMed-v1 is best suited to exploratory and internal downstream uses rather than production deployment. Potential applications include: (1) baseline comparison, serving as a reference point against later BotMed versions (e.g. v2) to evaluate the impact of changes in LoRA configuration, epochs, or dataset handling, (2) early-stage prototyping of medical chatbot interfaces and RAG pipelines before swapping in a more thoroughly evaluated model, (3) internal experimentation with prompt design and fine-tuning workflows for medical dialogue generation, and (4) further fine-tuning or continued training as a starting checkpoint for downstream medical NLP experiments."
+    ],
+    "fine_tuning_method": [
+      "Fine-tuned using LoRA (Low-Rank Adaptation) on Kaggle GPUs, with the base model loaded in 4-bit quantization via BitsAndBytes.",
+      "LoRA adapters (rank 8, alpha 16) target the attention and MLP projection layers (q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj), allowing the model to adapt to medical dialogue patterns while preserving the general instruction-following capabilities of the base Llama 3 model."
+    ],
+    "training_data": [
+      "Fine-tuned on the [ruslanmv/ai-medical-chatbot](https://huggingface.co/datasets/ruslanmv/ai-medical-chatbot) dataset.",
+      "Fine-tuned on the ruslanmv/ai-medical-chatbot dataset."
+    ],
+    "input_format": [
+      "messages = [{'role': 'user', 'content': t}]",
+      "prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)"
+    ],
+    "output_format": [
+      "Answer {idx}: {answer}\\n"
+    ]
+  },
+  "unverified_evidence": [],
+  "rejected_values": {},
+  "extraction": {
+    "card_revision": "baa7d590b644607bf95f132afea9d878ef9eae8f",
+    "card_truncated": false,
+    "llm": "Qwen/Qwen3-8B",
+    "decoding": "greedy, non-thinking",
+    "verifier": "v2"
+  }
+}

@@ -36,9 +36,13 @@ Answer with one JSON object only:
  "input_format": {"evidence": [], "value": ""},
  "output_format": {"evidence": [], "value": ""}}"""
 
+VERIFIER_VERSION = "v2"
+# v2: a statement of the model's intended use or of what it outputs counts as stating the task / output format
+# (v1 rejected "Chat" for a card saying "Intended for medical chatbot ... conversational use cases").
 SUPPORT_PROMPT = """You verify information extracted from a Hugging Face model card.
-Answer "yes" only if the card explicitly states the claim, possibly using a synonym or an abbreviation (e.g. "continued pre-training" = CPT, "biomedicine" = Medical, a "legal" tag = Legal, "trained using the full parameters" = Full fine-tuning).
-Answer "no" if the card does not state it, or the claim is only implied or guessed. Answer with "yes" or "no" only."""
+Answer "yes" if the card states the claim, possibly using a synonym or an abbreviation (e.g. "continued pre-training" = CPT, "biomedicine" = Medical, a "legal" tag = Legal, "trained using the full parameters" = Full fine-tuning).
+A sentence describing the model's intended use, purpose or outputs states its task and output format: e.g. "intended for medical chatbot / conversational use" = Chat, "question-answering" = QA, "generates summaries" or a summarization pipeline tag = Summarization, "outputs free text responses" = Free text, "produces a summary" = Summary.
+Answer "no" if the card does not state it, or the claim is only guessed from the model name, base model or general knowledge. Answer with "yes" or "no" only."""
 
 
 def _tokens(text):
@@ -94,6 +98,7 @@ class ModelInfoExtractor:
             "card_truncated": truncated,
             "llm": self.llm,
             "decoding": "greedy, non-thinking",
+            "verifier": VERIFIER_VERSION,
         }
         return info
 

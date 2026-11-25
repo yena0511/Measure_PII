@@ -1,0 +1,93 @@
+{
+  "agent": "Qwen/Qwen3-4B-Instruct-2507",
+  "model_info": {
+    "model_id": "BJyotibrat/Llama-3-8B-Instruct-BotMed-v1",
+    "domain": "Medical",
+    "task": "Chat",
+    "fine_tuning_method": "LoRA",
+    "training_data": {
+      "name": "ruslanmv/ai-medical-chatbot",
+      "description": "Medical chatbot dataset consisting of real doctor-patient Q&A transcripts"
+    },
+    "input_format": "Chat Template",
+    "output_format": "Answer"
+  },
+  "dataset_cards": [
+    {
+      "dataset_id": "ruslanmv/ai-medical-chatbot",
+      "revision": "138c99336a3afce0df88ffe6fd67bd231df25d36",
+      "error": null
+    }
+  ],
+  "fields": {
+    "document_type": {
+      "value": "Medical chatbot dialogues",
+      "basis": "observed",
+      "evidence": [
+        "Medical chatbot dataset consisting of real doctor-patient Q&A transcripts",
+        "AI Medical Chatbot Dataset: This is an experimental Dataset designed to run a Medical Chatbot It contains at least 250k dialogues between a Patient and a Doctor."
+      ]
+    },
+    "document_structure": {
+      "value": "Chat Template with user (patient) message as input and doctor (response) as output",
+      "basis": "observed",
+      "evidence": [
+        "messages = [{\"role\": \"user\", \"content\": t}]",
+        "Prompt: I have frequent fever and pain in chest",
+        "Fine-tuning (SFT, LoRA, DPO, ...) usually trains the model to generate only the output part of each example (e.g. the doctor's reply, the summary), given the input part (e.g. the patient's question, the document)."
+      ]
+    },
+    "training_target": {
+      "value": "The model is trained to generate the doctor's reply (output) given the patient's question (input)",
+      "basis": "observed",
+      "evidence": [
+        "Fine-tuning (SFT, LoRA, DPO, ...) usually trains the model to generate only the output part of each example (e.g. the doctor's reply, the summary), given the input part (e.g. the patient's question, the document).",
+        "training_data: ruslanmv/ai-medical-chatbot (Medical chatbot dataset consisting of real doctor-patient Q&A transcripts)"
+      ]
+    },
+    "pii_type": {
+      "value": "Doctor name, specialty, and contact information (e.g., sign-off lines)",
+      "basis": "observed",
+      "evidence": [
+        "- Fabricated attribution: Because the training data (ruslanmv/ai-medical-chatbot) consists of real doctor-patient Q&A transcripts, the model has learned to sign off responses with fabricated doctor names, specialties, and closing remarks (e.g.,)",
+        "The model has learned to sign off responses with fabricated doctor names, specialties, and closing remarks (e.g.,)",
+        "raw model outputs include fabricated sign-offs such as doctor names and specialties"
+      ]
+    },
+    "pii_location": [
+      {
+        "value": "output / doctor / sign-off at the end of the reply",
+        "basis": "observed",
+        "evidence": [
+          "- Fabricated attribution: Because the training data (ruslanmv/ai-medical-chatbot) consists of real doctor-patient Q&A transcripts, the model has learned to sign off responses with fabricated doctor names, specialties, and closing remarks (e.g.,)",
+          "raw model outputs include fabricated sign-offs such as doctor names and specialties",
+          "These are stylistic artifacts inherited from training data, not real credentialed input, and should never be presented to end-users as if they came from an actual licensed physician."
+        ]
+      }
+    ],
+    "writing_style": {
+      "value": "Stylistic sign-offs include fabricated doctor names, specialties, and closing remarks (e.g., 'Dr. Smith, Cardiologist, recommends rest and follow-up in 2 weeks') — these are not real credentials and are generated as part of the training pattern.",
+      "basis": "observed",
+      "evidence": [
+        "- Fabricated attribution: Because the training data (ruslanmv/ai-medical-chatbot) consists of real doctor-patient Q&A transcripts, the model has learned to sign off responses with fabricated doctor names, specialties, and closing remarks (e.g.,)",
+        "raw model outputs include fabricated sign-offs such as doctor names and specialties",
+        "These are stylistic artifacts inherited from training data, not real credentialed input, and should never be presented to end-users as if they came from an actual licensed physician."
+      ]
+    }
+  },
+  "dataset_cards_truncated": false,
+  "model_card_notes": [
+    "messages = [{\"role\": \"user\", \"content\": t}]",
+    "Prompt: I have frequent fever and pain in chest",
+    "Any downstream applications, derivative models, or software integrating this model must comply with Meta's Acceptable Use Policy and include the required \"Built with Llama\" attribution.)",
+    "- Fabricated attribution: Because the training data (ruslanmv/ai-medical-chatbot) consists of real doctor-patient Q&A transcripts, the model has learned to sign off responses with fabricated doctor names, specialties, and closing remarks (e.g.",
+    "These are stylistic artifacts inherited from training data, not real credentialed input, and should never be presented to end-users as if they came from an actual licensed physician.",
+    "- Do not present model-generated doctor names, credentials, or signatures as genuine.",
+    "(Note: raw model outputs include fabricated sign-offs such as doctor names and specialties)",
+    "The LoRA adapters (rank 8, alpha 16) target the attention and MLP projection layers (q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj), allowing the model to adapt to medical dialogue patterns while preserving the general instruction-following capabilities of the base Llama 3 model.",
+    "(3) internal experimentation with prompt design and fine-tuning workflows for medical dialogue generation, and",
+    "Its quality has only been assessed qualitatively via example prompts.",
+    "- Hallucination risk: As with any LLM, the model can generate plausible-sounding but incorrect or incomplete medical information.",
+    "- Always pair model output with human review, especially in any workflow that reaches an end-user seeking health guidance."
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "agent": "Qwen/Qwen3-8B",
+  "hypotheses": [
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "sign-off at the end of the reply",
+      "context_pattern": "Closing remarks such as 'Dr. Smith, Cardiologist, recommends rest and follow-up in 2 weeks'",
+      "expected_structure": [
+        "Patient message (input)",
+        "Doctor's reply (output)",
+        "Sign-off line (output)"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "middle of the reply",
+      "context_pattern": "Specialty mention in the middle of the response, e.g., 'As a Cardiologist, I recommend...'",
+      "expected_structure": [
+        "Patient message (input)",
+        "Doctor's reply (output) with specialty mention",
+        "Sign-off line (output)"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "input",
+      "pii_owner": "patient",
+      "pii_location": "embedded in the message",
+      "context_pattern": "Patient's message includes contact information such as 'Please contact me at john@example.com'",
+      "expected_structure": [
+        "Patient message (input) with embedded contact info",
+        "Doctor's reply (output)"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "beginning of the reply",
+      "context_pattern": "Doctor's name and specialty at the start of the response, e.g., 'Dr. Smith, Cardiologist: ...'",
+      "expected_structure": [
+        "Doctor's name and specialty (output) at the start",
+        "Doctor's reply (output)"
+      ]
+    },
+    {
+      "document_type": "Medical chatbot dialogues",
+      "pii_role": "output",
+      "pii_owner": "doctor",
+      "pii_location": "embedded in the sign-off",
+      "context_pattern": "Contact information in the sign-off, e.g., 'Dr. Smith, Cardiologist, can be reached at drsmith@example.com'",
+      "expected_structure": [
+        "Patient message (input)",
+        "Doctor's reply (output) with sign-off containing contact info"
+      ]
+    }
+  ]
+}

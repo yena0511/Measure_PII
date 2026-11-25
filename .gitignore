@@ -10,3 +10,7 @@ datasets/
 outputs/*
 !outputs/model_info/
 !outputs/hypothesis_probe/
+!outputs/model_info_v2/
+!outputs/hypothesis_probe_v2/
+!outputs/hypothesis_probe_v3/
+!outputs/target_baseline/

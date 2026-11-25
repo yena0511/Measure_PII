@@ -1,0 +1,68 @@
+{
+  "agent": "Qwen/Qwen3-8B",
+  "hypotheses": [
+    {
+      "document_type": "Meeting",
+      "pii_role": "input",
+      "pii_owner": "meeting participant",
+      "pii_location": "sign-off at the end of the participant's message",
+      "context_pattern": "Participant's message ends with 'Best regards, [Name]'",
+      "expected_structure": [
+        "Opening statement",
+        "Discussion points",
+        "Sign-off"
+      ]
+    },
+    {
+      "document_type": "Interview",
+      "pii_role": "output",
+      "pii_owner": "interviewee",
+      "pii_location": "contact line at the end of the summary",
+      "context_pattern": "Summary ends with 'For more information, contact [Email] or [Phone]'",
+      "expected_structure": [
+        "Introduction",
+        "Key points",
+        "Contact information"
+      ]
+    },
+    {
+      "document_type": "News",
+      "pii_role": "input",
+      "pii_owner": "source",
+      "pii_location": "footer of the article",
+      "context_pattern": "Article ends with 'Contact: [Email] | Phone: [Phone] | Website: [URL]'",
+      "expected_structure": [
+        "Headline",
+        "Lead paragraph",
+        "Body",
+        "Footer"
+      ]
+    },
+    {
+      "document_type": "Daily Life",
+      "pii_role": "output",
+      "pii_owner": "user",
+      "pii_location": "sign-off in the generated response",
+      "context_pattern": "Generated response ends with 'You can reach me at [Email] or [Phone] for further assistance'",
+      "expected_structure": [
+        "Query",
+        "Response",
+        "Sign-off"
+      ]
+    },
+    {
+      "document_type": "Report",
+      "pii_role": "input",
+      "pii_owner": "author",
+      "pii_location": "header of the document",
+      "context_pattern": "Document starts with 'Prepared by: [Name], Email: [Email], Phone: [Phone]'",
+      "expected_structure": [
+        "Title",
+        "Author information",
+        "Introduction",
+        "Body",
+        "Conclusion"
+      ]
+    }
+  ]
+}
